@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ServiceConfigurationSchema"
+    targetNamespace="http://tempuri.org/ServiceConfiguration.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/ServiceConfiguration.xsd"
+    xmlns:mstns="http://tempuri.org/ServiceConfiguration.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="serviceConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="serviceInstances" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="serviceInstance" type="mstns:ServiceInstance" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceInstance">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="master">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="slaveEndpoint" type="mstns:SlaveEndpoint" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="slave">
+          <xs:complexType>
+            <xs:attribute name="port" type="xs:int"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="required"/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="apiPort" type="xs:int" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SlaveEndpoint">
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="host" type="xs:string"/>
+    <xs:attribute name="port" type="xs:int"/>
+  </xs:complexType>
+</xs:schema>

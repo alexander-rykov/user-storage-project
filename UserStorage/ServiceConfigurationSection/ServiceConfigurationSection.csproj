@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D8833F8-1528-4EE1-92AF-CCE0C2CF3E2E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{527B8CA4-574A-4234-8918-73CDC992B3DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UserStorageApp</RootNamespace>
-    <AssemblyName>UserStorageApp</AssemblyName>
+    <RootNamespace>ServiceConfigurationSection</RootNamespace>
+    <AssemblyName>ServiceConfigurationSection</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,27 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ConfigurationElementCollection.cs" />
+    <Compile Include="ServiceConfigurationSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ServiceConfiguration.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ServiceConfigurationSection\ServiceConfigurationSection.csproj">
-      <Project>{527b8ca4-574a-4234-8918-73cdc992b3da}</Project>
-      <Name>ServiceConfigurationSection</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UserStorageServices\UserStorageServices.csproj">
-      <Project>{3c5e56f6-e2f8-4e49-a68c-707934f04350}</Project>
-      <Name>UserStorageServices</Name>
-    </ProjectReference>
+    <Compile Include="ServiceInstanceCollection.cs" />
+    <Compile Include="ServiceInstanceElement.cs" />
+    <Compile Include="ServiceInstanceMode.cs" />
+    <Compile Include="SlaveElement.cs" />
+    <Compile Include="SlaveEndpointCollection.cs" />
+    <Compile Include="SlaveEndpointElement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
