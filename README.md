@@ -45,7 +45,7 @@ class User
 
 UserStorageServices project also has [UserStorageService class](UserStorage/UserStorageServices/UserStorageService.cs) that is a template for UserStorage service you will be working with.
 
-It worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also move the existed code to new folders and refactor it in a way you like.
+It is worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also move the existed code to new folders and refactor it in a way you like.
 
 ## Step 1
 
