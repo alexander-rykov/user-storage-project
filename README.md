@@ -1,19 +1,34 @@
 # UserStorage Project
 
-The goal of this project is to create an easily configured distributed application that has open WCF API and communicates its state from the main part to dependent parts through the network.
+The goal of this project is to create an easily configured distributed application that has open WCF API and communicates its state through the network.
 
 ![UserStorage project overview](images/UserStorageOverview.png "UserStorage project overview")
 
-* A UserStorage service is a simple service that stores user records and provides an API for managing user records and searching.
-* A sample service is an UserService that provides storage and search functionality.
-* The service in master mode (MASTER NODE) should handle READ and WRITE requests.
-* The service in slave mode (SLAVE NODE) should only handle READ requests.
-* The service in master mode should have a persistent storage for to save its internal state when an application is going offline, and to restore the state when an application is going online.
-* There should be only one MASTER NODE, and there might be many SLAVE NODES.
-* All nodes should communicate over the network using to send updates and receive incoming requests.
-* The changes on the MASTER NODE should be delivered to all SLAVE NODES using [MASTER-SLAVE data replication](https://ruhighload.com/post/%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85).  The recommended approach is that MASTER NODE knows about all SLAVE NODES and sends them an update NOTIFICATIONS. Other approaches are also valid including [eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency).
-* All application configuration settings should be stored in App.config file.
+UserStorage service is a simple service that stores user records and provides an API for managing user records and searching. It is possible to run several instances of this service and share user records between them. The only instance that allows READ and WRITE operations is called MASTER NODE. The other instances allow only READ operations. Those are known as SLAVE NODES. The only one READ operation in API is SEARCH, and there are two WRITE operations - ADD and REMOVE. That means UserStorage service can operate in two modes - MASTER and SLAVE. Responsibilities of the service in MASTER mode includes spreading the changes to all services that operate in SLAVE mode.
 
+In other words, MASTER NODE accepts READ (SEARCH) and WRITE (ADD/REMOVE) operations, changes its state, and sends an update to all SLAVES NODE that accepts only READ (SEARCH) operations. If a client sends WRITE request to a SLAVE NODE, the node replies with an error.
+
+Described approach when MASTER NODE owns original data and other SLAVE NODES have only the copy is knows [MASTER-SLAVE data replication](https://ruhighload.com/post/%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85). Possible solutions here are:
+* MASTER NODE sends updates to all SLAVE NODES by himself.
+* SLAVE NODES sends a request to MASTER NODE and MASTER replies with a bunch of updates.
+* Other...
+
+We recommend using the first approach, because we think that this solution is simpler that others.
+
+Also, a MASTER NODE has a persistent storage for user record information when the application is not working. SLAVE NODES have only in-memory storage, and they do not save its state when they are not running. A persistent storage uses the file system to save user records when an application is shutting down and load them when it starts. A good question here is how to initialize the internal state of a SLAVE NODE when an application starts. The answer to this question is a part of the architectural design of this project.
+
+A MASTER NODE sends updates to SLAVE NODES using TCP as a [transport channel](https://en.wikipedia.org/wiki/List_of_network_protocols_(OSI_model)#Layer_4_.28Transport_Layer.29) and [internet sockets](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets) as endpoints.
+
+The one main thing about this project is that the final application should be configurable, and all application settings should be placed in App.config file. SLAVE NODE is the same application as a MASTER NODE except differences in application configuration file.
+
+## Template
+
+In the UserStorage folder you can find a solution template that you can use for building your own application. Let's take a look at the C# projects in the folder:
+
+* UserStorageApp - a console application project with predefined App.config configuration file that has <serviceConfiguration> custom section. ServiceConfiguration.xsd file stores XML schema for this section. This project should not contain any service related logic, 
+* UserStorageServices - a class library project for all service related stuff.
+* UserStorageServices.Tests - a class library project with all unit tests for service related behavior.
+* ServiceConfigurationSection - a class library project that stores classes for handling <serviceConfiguration> custom section in App.config.
 
 Let's start.
 
