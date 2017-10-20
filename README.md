@@ -23,12 +23,12 @@ The one main thing about this project is that the final application should be co
 
 ## Template
 
-In the UserStorage folder you can find a solution template that you can use for building your own application. Let's take a look at the C# projects in the folder:
+In the [UserStorage](UserStorage) folder you can find a solution template that you can use for building your own application. Let's take a look at the C# projects in the folder:
 
-* UserStorageApp - a console application project with predefined App.config configuration file that has <serviceConfiguration> custom section. ServiceConfiguration.xsd file stores XML schema for this section. This project should not contain any service related logic, 
+* UserStorageApp - a console application project with predefined App.config configuration file that has _serviceConfiguration_ custom section. ServiceConfiguration.xsd file stores XML schema for this section. This project should not contain any service related logic, 
 * UserStorageServices - a class library project for all service related stuff.
 * UserStorageServices.Tests - a class library project with all unit tests for service related behavior.
-* ServiceConfigurationSection - a class library project that stores classes for handling <serviceConfiguration> custom section in App.config.
+* ServiceConfigurationSection - a class library project that stores classes for handling _serviceConfiguration_ custom section in App.config.
 
 Let's start.
 
