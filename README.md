@@ -1,9 +1,10 @@
-# UserStorage
+# UserStorage Project
 
-The goal of this project is to create an easily configured distributed application that hosts user-defined services.
+The goal of this project is to create an easily configured distributed application that has open WCF API and communicates its state from the main part to dependent parts through the network.
 
-![User service components](images/UserServiceComponents.png "User service components")
+![UserStorage project overview](images/UserStorageOverview.png "UserStorage project overview")
 
+* A UserStorage service is a simple service that stores user records and provides an API for managing user records and searching.
 * A sample service is an UserService that provides storage and search functionality.
 * The service in master mode (MASTER NODE) should handle READ and WRITE requests.
 * The service in slave mode (SLAVE NODE) should only handle READ requests.
