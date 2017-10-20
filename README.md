@@ -30,9 +30,7 @@ In the [UserStorage](UserStorage) folder you can find a solution template that y
 * [UserStorageServices.Tests](UserStorage/UserStorageServices.Tests) - a class library project with all unit tests for service related behavior.
 * [ServiceConfigurationSection](UserStorage/ServiceConfigurationSection) - a class library project that stores classes for handling _serviceConfiguration_ custom section in App.config.
 
-Let's start.
-
-An user is represented by a User class, that has first and last name fields, and age.
+UserStorage service operates over an entity that describes a user and has relevant name - [User class](UserStorage/UserStorageServices/User.cs). This class is pretty simple, and has FirstName, LastName and Age fields only.
 
 ```cs
 class User
