@@ -48,7 +48,7 @@ UserStorageServices project also has [UserStorageService class](UserStorage/User
 
 It is worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also the code refactor it in a way you like.
 
-We encourage you to practice TDD and actively use Git during this excersise. Here are some principles that might be useful for you:
+We encourage you to practice TDD and actively use Git during this exersise. Here are some principles that might be useful for you:
 * [Test First](http://www.extremeprogramming.org/rules/testfirst.html)
 * [Red-Green-Refactor cycle](http://www.jamesshore.com/Blog/Red-Green-Refactor.html)
 * [Do commit early and often](https://sethrobertson.github.io/GitBestPractices/#commit)
@@ -57,7 +57,7 @@ We encourage you to practice TDD and actively use Git during this excersise. Her
 
 ## Step 1
 
-![UserStorage project overview](images/UserStorageOverview.png "UserStorage project overview")
+![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
 - [ ] Create a set of API methods for user storage service to support following operations:
   * Adding a new user to the user storage.
