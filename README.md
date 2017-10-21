@@ -21,6 +21,7 @@ A MASTER NODE sends updates to SLAVE NODES using TCP as a [transport channel](ht
 
 The one main thing about this project is that the final application should be configurable, and all application settings should be placed in App.config file. SLAVE NODE is the same application as a MASTER NODE except differences in application configuration file.
 
+
 ## Template
 
 In the [UserStorage](UserStorage) folder you can find a solution template that you can use for building your own application. Let's take a look at the C# projects in the folder:
@@ -45,9 +46,18 @@ class User
 
 UserStorageServices project also has [UserStorageService class](UserStorage/UserStorageServices/UserStorageService.cs) that is a template for UserStorage service you will be working with.
 
-It is worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also move the existed code to new folders and refactor it in a way you like.
+It is worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also the code refactor it in a way you like.
+
+We encourage you to practice TDD and actively use Git during this excersise. Here are some principles that might be useful for you:
+* [Test First](http://www.extremeprogramming.org/rules/testfirst.html)
+* [Red-Green-Refactor cycle](http://www.jamesshore.com/Blog/Red-Green-Refactor.html)
+* [Do commit early and often](https://sethrobertson.github.io/GitBestPractices/#commit)
+* [Branch-per-Feature](http://dymitruk.com/blog/2012/02/05/branch-per-feature/)
+
 
 ## Step 1
+
+![UserStorage project overview](images/UserStorageOverview.png "UserStorage project overview")
 
 - [ ] Create a set of API methods for user storage service to support following operations:
   * Adding a new user to the user storage.
