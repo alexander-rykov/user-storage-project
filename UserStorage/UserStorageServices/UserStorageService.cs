@@ -8,6 +8,12 @@ namespace UserStorageServices
     public class UserStorageService
     {
         /// <summary>
+        /// Gets or sets an amount of users in the storage.
+        /// </summary>
+        /// <returns>An amount of users in the storage.</returns>
+        public int Count { get; set; }
+
+        /// <summary>
         /// Adds a new <see cref="User"/> to the storage.
         /// </summary>
         /// <param name="user">A new <see cref="User"/> that will be added to the storage.</param>
