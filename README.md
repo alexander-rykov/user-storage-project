@@ -74,11 +74,26 @@ $ git add *
 $ git status
 ```
 
-- [ ] Commit and publish all changes. Check status. Publish changes to github.
+- [ ] Commit and publish all changes. Check status.
 
 ```sh
 $ git commit -m "Add UserStorage template."
 $ git status
+```
+
+- [ ] Edit README.md and mark all checkboxes in this section. Commit changes.
+
+```sh
+$ git status
+$ git add *.md
+$ git status
+$ git commit -m "Mark completed items."
+$ git status
+```
+
+- [ ] Publish changes to github.
+
+```sh
 $ git push
 ```
 
