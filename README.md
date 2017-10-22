@@ -97,10 +97,12 @@ $ git status
 $ git push
 ```
 
-Now you have initial version of your repository for the UserStorage project.
+Now you have the initial version of your repository uploaded to the github.
 
 
 ## Step 1
+
+![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
 - [ ] Create a new branch
 
@@ -108,8 +110,6 @@ Now you have initial version of your repository for the UserStorage project.
 $ git checkout -b step1
 Switched to a new branch "step1"
 ```
-
-![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
 
 - [ ] Create a set of API methods for user storage service to support following operations:
@@ -126,6 +126,12 @@ Each operation should have a name, a set of arguments and a result.
 - [ ] Create a class for user storage service and implement the operations that were created on the previous step. Use ready unit tests to make sure that implementation covers all required functionality.
 
 - [ ] Extract functionality that creates a unique identifier to a separate class, and refactor a storage service class to use the class for generating a new unique identifier.
+
+- [ ] Run StyleCop to make sure that the code you have added fits defined code standards.
+
+- [ ] Mark all completed items in README.md. 
+
+- [ ] Add files to the staging area, commit all changes, publish to github.
 
 
 ## Step 2
