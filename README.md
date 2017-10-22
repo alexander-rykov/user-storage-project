@@ -102,7 +102,7 @@ Now you have the initial version of your repository uploaded to the github.
 
 ## Step 1
 
-The diagram below shows the current relationship between Client and UserStorageService classes.
+The diagram below shows the current relationship between Client and UserStorageService classes. ([Detailed explanation of the relationships](http://creately.com/blog/diagrams/class-diagram-relationships) on UML Class Diagram.)
 
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
@@ -132,7 +132,7 @@ $ git checkout -b step1
 ```cs
 if (IsLoggingEnabled)
 {
-    Trace.WriteLine("Add() method is called.");
+    Console.WriteLine("Add() method is called.");
 }
 ```
   Add logging to Remove and Search methods as well.
