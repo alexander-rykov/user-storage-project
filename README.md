@@ -55,9 +55,47 @@ We encourage you to practice TDD and actively use Git during this exersise. Here
 * [Branch-per-Feature](http://dymitruk.com/blog/2012/02/05/branch-per-feature/)
 
 
+## Prepare
+
+- [ ] Create a new repository on github. Move this README.md file and UserStorage folder from the master branch of this repository to your new repository.
+
+- [ ] Install [StyleCop](https://github.com/StyleCop/StyleCop) or [Visual StyleCop](https://www.youtube.com/watch?v=0OMuzHRrScw). Open UserStorage solution and run StyleCop to check your code and to make sure that there are no code issues.
+
+- [ ] Check unstaged files in your repository.
+
+```sh
+$ git status
+```
+
+- [ ] Add files to the staging area. Check status of staged files.
+
+```sh
+$ git add *
+$ git status
+```
+
+- [ ] Commit and publish all changes. Check status. Publish changes to github.
+
+```sh
+$ git commit -m "Add UserStorage template."
+$ git status
+$ git push
+```
+
+Now you have initial version of your repository for the UserStorage project.
+
+
 ## Step 1
 
+- [ ] Create a new branch
+
+```sh
+$ git checkout -b step1
+Switched to a new branch "step1"
+```
+
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
+
 
 - [ ] Create a set of API methods for user storage service to support following operations:
   * Adding a new user to the user storage.
@@ -69,8 +107,6 @@ Each operation should have a name, a set of arguments and a result.
 - [ ] Add an **Id** field to the _User_ class. The field value should uniqueily identify an user in the storage. When adding a new user the storage should evaluate a new unique value and assign it to user object.
 
 - [ ] Arrange service operations as an interface methods. Use TDD approach and mocks to create unit tests for those methods and make sure that all possible cases are covered (think about error handling).
-
-- [ ] Install StyleCop and apply provided settings. Run StyleCop each time before committ.
 
 - [ ] Create a class for user storage service and implement the operations that were created on the previous step. Use ready unit tests to make sure that implementation covers all required functionality.
 
