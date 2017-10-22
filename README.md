@@ -57,7 +57,7 @@ We encourage you to practice TDD and actively use Git during this exersise. Here
 
 ## Prepare
 
-- [ ] Create a new repository on github. Move this README.md file and UserStorage folder from the master branch of this repository to your new repository.
+- [ ] Create a new repository on github. Move all content of the master branch in this repository to your new repository.
 
 - [ ] Install [StyleCop](https://github.com/StyleCop/StyleCop) or [Visual StyleCop](https://www.youtube.com/watch?v=0OMuzHRrScw). Open UserStorage solution and run StyleCop to check your code and to make sure that there are no code issues.
 
@@ -102,39 +102,92 @@ Now you have the initial version of your repository uploaded to the github.
 
 ## Step 1
 
+The diagram below shows the current relationship between Client and UserStorageService classes.
+
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
-- [ ] Create a new branch
+
+- [ ] Create a new branch with name "step1", and switch to this branch.
 
 ```sh
 $ git checkout -b step1
-Switched to a new branch "step1"
+```
+
+- [ ] Add a new **Id** field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
+
+- [ ] UserStorageService class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in UserStorageServiceTests class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
+
+- [ ] Add an internal storage to UserStorageService class. Consider collections from System.Collections.Generic namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection. Add test first, then add implementation to the Add method. Commit.
+
+- [ ] Add tests and then add an implementation for Remove method. Commit.
+
+- [ ] Add tests and then add an implementation for Search method. Use cases:
+  * Search through FirstName.
+  * Search through LastName.
+  * Search through Age.
+  Commit.
+
+- [ ] Add a new bool field IsLoggingEnabled to UserStorageService class, and add logging functionality to Add method:
+
+```cs
+if (IsLoggingEnabled)
+{
+    Trace.WriteLine("Add() method is called.");
+}
+```
+  Add logging to Remove and Search methods as well.
+
+- [ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
+
+- [ ] Mark all completed items in README.md. Commit.
+
+- Publish "step1" branch to github.
+
+- Switch to master branch. Merge "step1" branch into master. Publish changes to master branch on github.
+
+```sh
+$ git checkout master
+$ git merge step1
+TODO: merge as a one commit
 ```
 
 
-- [ ] Create a set of API methods for user storage service to support following operations:
-  * Adding a new user to the user storage.
-  * Removing an existed user from the user storage.
-  * Search through all existed users in the user storage.
+## Step 2
 
-Each operation should have a name, a set of arguments and a result.
+TODO: Diagram with expected result.
 
-- [ ] Add an **Id** field to the _User_ class. The field value should uniqueily identify an user in the storage. When adding a new user the storage should evaluate a new unique value and assign it to user object.
 
-- [ ] Arrange service operations as an interface methods. Use TDD approach and mocks to create unit tests for those methods and make sure that all possible cases are covered (think about error handling).
+- [ ] Create a new branch with name "step2", and switch to this branch.
 
-- [ ] Create a class for user storage service and implement the operations that were created on the previous step. Use ready unit tests to make sure that implementation covers all required functionality.
+
+....
+
+
+- [ ] Run StyleCop. Fix issues. Commit.
+
+- [ ] Mark. Commit.
+
+- Publish "step2" branch to github.
+
+- Switch to master branch. Merge "step2" branch into master. Publish changes to master branch on github.
+
+
+## Step 3
+
+- [ ] Extract inderface. Replace Generate guid with generate new Id.
 
 - [ ] Extract functionality that creates a unique identifier to a separate class, and refactor a storage service class to use the class for generating a new unique identifier.
 
-- [ ] Run StyleCop to make sure that the code you have added fits defined code standards.
+- [ ] Extract interface for UserStorageService.
 
-- [ ] Mark all completed items in README.md. 
-
-- [ ] Add files to the staging area, commit all changes, publish to github.
+- [ ] Error handling.
 
 
-## Step 2
+- [ ] Extend search.,
+  * Search through FirstName and LastName.
+  * Search through FirstName and Age.
+  * Search through LastName and Age.
+  * Search through FirstName, LastName and Age.
 
 - [ ] Add a persistent storage for storing the service's internal state.
   * Store all necessary information in XML file. Create an [appSettings section](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) in App.config file, and add a new key-value pair to store the file name.
@@ -145,6 +198,9 @@ Each operation should have a name, a set of arguments and a result.
 - [ ] Add logging functionality to log user service API calls.
   * Add a new [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) to _App.config_. If this switch is enabled all calls to API call should be logged.
   * You can use logging functionality from System.Diagnostics namespace. See more details in [TextWriterTraceListener](https://msdn.microsoft.com/ru-ru/library/system.diagnostics.textwritertracelistener(v=vs.110).aspx) MSDN article. You can also use NLog or other logging framework, but this is optional.
+
+
+## Step 3
 
 
 ## Step 4
