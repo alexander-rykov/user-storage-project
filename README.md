@@ -49,7 +49,7 @@ UserStorageServices project also has [UserStorageService class](UserStorage/User
 It is worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also the code refactor it in a way you like.
 
 We encourage you to practice TDD and actively use Git during this exersise. Here are some principles that might be useful for you:
-* [Test First](http://www.extremeprogramming.org/rules/testfirst.html)
+* [Test-First](http://www.extremeprogramming.org/rules/testfirst.html)
 * [Red-Green-Refactor cycle](http://www.jamesshore.com/Blog/Red-Green-Refactor.html)
 * [Do commit early and often](https://sethrobertson.github.io/GitBestPractices/#commit)
 * [Branch-per-Feature](http://dymitruk.com/blog/2012/02/05/branch-per-feature/)
@@ -86,8 +86,9 @@ $ git status
 
 ```sh
 $ git diff
+(no output)
 $ git diff --staged
-...
+(changes output)
 ```
 
 - [ ] [Commit](https://git-scm.com/book/ru/v1/Основы-Git-Запись-изменений-в-репозиторий) and publish all changes. Check status.
@@ -138,7 +139,7 @@ The class diagram below shows the current [relationship](http://creately.com/blo
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
 
-- [ ] [Create a new branch](https://git-scm.com/book/ru/v1/Ветвление-в-Git-Основы-ветвления-и-слияния) with name "step1", and switch to this branch. Make sure that you are on "step1" branch before continue.
+[ ] [Create a new branch](https://git-scm.com/book/ru/v1/Ветвление-в-Git-Основы-ветвления-и-слияния) with name "step1", and switch to this branch. Make sure that you are on "step1" branch before continue.
 
 ```sh
 $ git checkout -b step1
@@ -147,22 +148,26 @@ $ git branch
 * step1
 ```
 
-- [ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
+[ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
 
-- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
+[ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
 
-- [ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection. Add test first, then add implementation to the Add method. Commit.
+[ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection.
 
-- [ ] Add tests and then add an implementation for Remove method. Commit.
+Test-First: add use cases in form of tests to _UserStorageServiceTests_ class (**red** tests), and only then add implementation to the Add method (make your tests **green**).
 
-- [ ] Add tests and then add an implementation for Search method. Use cases:
+Commit.
+
+- [ ] Test-First: add use cases (red) and then add an implementation for Remove method (green). Commit.
+
+- [ ] Test-First: add use cases (red) and then add an implementation for Search method (green). Use cases:
   * Search through FirstName.
   * Search through LastName.
   * Search through Age.
 
 Commit.
 
-- [ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
+[ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
 
 ```cs
 if (IsLoggingEnabled)
@@ -172,9 +177,9 @@ if (IsLoggingEnabled)
 ```
   Add logging to Remove and Search methods too.
 
-- [ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
+[ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
 
-- [ ] Mark all completed items in README.md. Commit.
+[ ] Mark all completed items in README.md. Commit.
 
 - Publish "step1" branch to github.
 
@@ -187,9 +192,12 @@ $ git branch
   step1
 $ git merge --squash step1
 $ git status
-$ git diff HEAD
+$ git diff --staged
 $ git commit -m "Add implementation for Add, Remove and Search methods. Add logging."
 $ git log --oneline
+$ git status
+On branch master
+nothing to commit, working directory clean
 ```
 
 
@@ -200,9 +208,9 @@ TODO: Diagram with expected result.
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
-- [ ] Extract functionality of generating new user identifier into a new class. ([Extract Class refactoring](https://refactoring.guru/extract-class))
-  * Create a new interface, give it a meaningful name, and add relevant methods.
-  * Add tests that 
+- [ ] ([Extract Class refactoring](https://refactoring.guru/extract-class)): extract functionality of generating new user identifier into a new class.
+  * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
+  * Test-First: start writing use cases for 
   * 
 
 ....
