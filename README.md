@@ -67,14 +67,14 @@ We encourage you to practice TDD and actively use Git during this exersise. Here
 $ git status
 ```
 
-- [ ] Add files to the staging area. Check status of staged files.
+- [ ] Add files to the [staging area](https://git-scm.com/book/ru/v1/Введение-Основы-Git#Три-состояния). Check status of staged files.
 
 ```sh
 $ git add *
 $ git status
 ```
 
-- [ ] Commit and publish all changes. Check status.
+- [ ] [Commit](https://git-scm.com/book/ru/v1/Основы-Git-Запись-изменений-в-репозиторий) and publish all changes. Check status.
 
 ```sh
 $ git commit -m "Add UserStorage template."
@@ -102,7 +102,7 @@ Now you have the initial version of your repository uploaded to the github.
 
 ## Step 1
 
-The diagram below shows the current relationship between Client and UserStorageService classes. ([Detailed explanation of the relationships](http://creately.com/blog/diagrams/class-diagram-relationships) on UML Class Diagram.)
+The class diagram below shows the current [relationship](http://creately.com/blog/diagrams/class-diagram-relationships) between Client and UserStorageService classes.
 
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
@@ -128,7 +128,7 @@ $ git branch
   * Search through FirstName.
   * Search through LastName.
   * Search through Age.
-  Commit.
+Commit.
 
 - [ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
 
