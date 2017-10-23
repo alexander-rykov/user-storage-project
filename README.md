@@ -135,7 +135,7 @@ if (IsLoggingEnabled)
     Console.WriteLine("Add() method is called.");
 }
 ```
-  Add logging to Remove and Search methods as well.
+  Add logging to Remove and Search methods too.
 
 - [ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
 
