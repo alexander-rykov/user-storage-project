@@ -220,7 +220,7 @@ The class diagram below shows the application state after all refactorings in th
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
-- [ ] [Extract Class refactoring](https://refactoring.guru/extract-class): extract functionality of generating new user identifier into a new class.
+- [ ] [Extract Class refactoring](https://refactoring.guru/extract-class): extract [strategy](https://refactoring.guru/design-patterns/strategy) of generating new user identifier into a new class.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
   * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (generation of a new identifier) from _UserStorageService_ class to your new class.
   * Modify _UserStorageService_ to create a new instance of your new class, and use it to generate an identifier when adding a new user.
@@ -229,7 +229,7 @@ Run all tests to make sure that _UserStorageService_ works as expected.
 
 Review and commit.
 
-- [ ] Extract Class: extract functionality of validating user data when adding a new user to the storage.
+- [ ] Extract Class: extract strategy of validating user data when adding a new user to the storage.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
   * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (validation of the user data) from _UserStorageService_ class to your new class.
   * Modify _UserStorageService_ to create a new instance of your new class, and use it to validate a user data when adding a new user.
@@ -355,12 +355,24 @@ Refactor tests, run tests, review and commit.
 
 ## Step 5
 
-- [ ] Add a persistent storage for storing the service's internal state.
-  * Store all necessary information in XML file. Create an [appSettings section](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) in App.config file, and add a new key-value pair to store the file name.
-  * The service should be able to store all user records that are added to user storage service to a file on disk using XML format.
-  * The service should also store information about an unique identifier generation.
-  * The service should be able to restore it's state using the provided persistent storage.
+- [ ] New branch "step5".
 
+- [ ] Create a new interface _IUserRepository_ and two classes like it is shown on the class diagram below:
+
+![Master-Slave Repository](images/MasterSlaveRepository.png "Master-Slave Repository")
+
+Run tests, review and commit.
+
+- [ ] Refactor your code:
+  * [Extract Method](https://refactoring.guru/extract-method): extract all code in _UserStorageService_ class that access an internal user collection to private method with Get, Set and Query method names.
+  * [Move Field](https://refactoring.guru/move-field): move a user collection from _UserStorageServiceBase_ to _UserMemoryCache_ class.
+  * [Move Method](https://refactoring.guru/move-method): move your new private Get, Set and Query methods to _UserMemoryCache_ class, and make them public.
+
+Run tests, review and commit.
+
+- [ ]
+
+- [ ] Give your own names to UserMemoryCache and UserMemoryCacheWithState classes. Refactor, run tests, review and commit.
 
 - [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
   * ADD event when a new user is added to the user storage service.
@@ -378,6 +390,7 @@ Refactor tests, run tests, review and commit.
 
 - [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
 
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
 ## Step 6
 
