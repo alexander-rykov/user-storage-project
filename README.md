@@ -214,6 +214,8 @@ nothing to commit, working directory clean
 
 ## Step 2
 
+The class diagram below shows the application state after all refactorings in the current step.
+
 ![Client and UserStorageService Step 2](images/ClientAndServiceStep2.png "Client and UserStorageService Step 2")
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
@@ -250,14 +252,13 @@ nothing to commit, working directory clean
 
 ## Step 3
 
-- [ ] Extract inderface. Replace Generate guid with generate new Id.
+- [ ] New branch "step3".
 
-- [ ] Extract functionality that creates a unique identifier to a separate class, and refactor a storage service class to use the class for generating a new unique identifier.
+- [ ] Composite validator.
+  * Refactor your class that validates user data to extract validation logic for each validation rule to a separate class.
+  * Use [Composite design pattern](https://refactoring.guru/design-patterns/composite) to orgainize your code and create a composite validator.
 
-- [ ] Extract interface for UserStorageService.
-
-- [ ] Error handling.
-
+![Composite Validator](images/ClientAndServiceCompositeValidator.png "Composite Validator")
 
 - [ ] Extend search.,
   * Search through FirstName and LastName.
@@ -274,6 +275,8 @@ nothing to commit, working directory clean
 - [ ] Add logging functionality to log user service API calls.
   * Add a new [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) to _App.config_. If this switch is enabled all calls to API call should be logged.
   * You can use logging functionality from System.Diagnostics namespace. See more details in [TextWriterTraceListener](https://msdn.microsoft.com/ru-ru/library/system.diagnostics.textwritertracelistener(v=vs.110).aspx) MSDN article. You can also use NLog or other logging framework, but this is optional.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step3". Merge "step3" into master. Publish.
 
 
 ## Step 3
