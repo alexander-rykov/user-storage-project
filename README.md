@@ -49,7 +49,7 @@ UserStorageServices project also has [UserStorageService class](UserStorage/User
 It is worth mentioning that this code is only the initial template - you are allowed not only to add new code, but also the code refactor it in a way you like.
 
 We encourage you to practice TDD and actively use Git during this exersise. Here are some principles that might be useful for you:
-* [Test-First](http://www.extremeprogramming.org/rules/testfirst.html)
+* [Test-First](http://www.extremeprogramming.org/rules/testfirst.html), ["Детали test-first, которых так не хватало"](https://habrahabr.ru/company/mailru/blog/274771/).
 * [Red-Green-Refactor cycle](http://www.jamesshore.com/Blog/Red-Green-Refactor.html)
 * [Do commit early and often](https://sethrobertson.github.io/GitBestPractices/#commit)
 * [Branch-per-Feature](http://dymitruk.com/blog/2012/02/05/branch-per-feature/)
