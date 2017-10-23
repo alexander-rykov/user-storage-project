@@ -168,6 +168,10 @@ TODO: Diagram with expected result.
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
+- [ ] Extract functionality of generating new user identifier into a new class. ([Extract Class refactoring](https://refactoring.guru/extract-class))
+  * Create a new interface, give it a meaningful name, and add relevant methods.
+  * Add tests that 
+  * 
 
 ....
 
