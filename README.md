@@ -257,11 +257,14 @@ The class diagram below shows the application state after all refactorings in th
 - [ ] Composite validator.
   * Refactor your class that validates user data to extract validation logic for each validation rule to a separate class.
   * Use [Composite design pattern](https://refactoring.guru/design-patterns/composite) to create a composite validator.
-  * Run tests, review and commit.
+
+Run tests, review and commit.
 
 ![Composite Validator](images/ClientAndServiceCompositeValidator.png "Composite Validator")
 
-- [ ] Validation exceptions. Create a custom exception for each validation case.Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests. Run tests, review and commit.
+- [ ] Validation exceptions. Create a custom exception for each validation case.Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests.
+
+Run tests, review and commit.
 
 - [ ] Extended search functionality. Add new functionality to your Search method for supporting these use cases:
   * Search by FirstName and LastName.
@@ -272,10 +275,14 @@ The class diagram below shows the application state after all refactorings in th
 Add new tests. Run tests, review and commit.
 
 - [ ] Extract logging functionality.
-  * Extract Class refactoring: extract logging functionality to a separate class that inherits _IUserStorageService_ class.
+  * Extract Class: extract logging functionality to a separate class that inherits _IUserStorageService_ class.
   * Use [Decorator design pattern](https://refactoring.guru/design-patterns/decorator) to create a log decorator.
+  * Make _UserStorageServiceDecorator_ class abstract.
+  * Remove unnecessary _IsLoggingEnabled_ field from _UserStorageService_ class.
 
 ![Log Decorator](images/ClientAndServiceLogDecorator.png "Log Decorator")
+
+Run tests, review and commit.
 
 - [ ] Add logging functionality to log user service API calls.
   * Add a new [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) to _App.config_. If this switch is enabled all calls to API call should be logged.
