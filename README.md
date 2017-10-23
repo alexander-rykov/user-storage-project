@@ -65,6 +65,13 @@ We encourage you to practice TDD and actively use Git during this exersise. Here
 
 ```sh
 $ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+...
 ```
 
 - [ ] Add files to the [staging area](https://git-scm.com/book/ru/v1/Введение-Основы-Git#Три-состояния). Check status of staged files.
@@ -72,23 +79,47 @@ $ git status
 ```sh
 $ git add *
 $ git status
+...
+```
+
+- [ ] Review changes using [git diff](https://git-scm.com/book/ru/v1/Основы-Git-Запись-изменений-в-репозиторий#Просмотр-индексированных-и-неиндексированных-изменений). (Notice that **git diff** doesn't return any changes anymore.)
+
+```sh
+$ git diff
+$ git diff --staged
+...
 ```
 
 - [ ] [Commit](https://git-scm.com/book/ru/v1/Основы-Git-Запись-изменений-в-репозиторий) and publish all changes. Check status.
 
 ```sh
 $ git commit -m "Add UserStorage template."
+...
 $ git status
+On branch master
+nothing to commit, working directory clean
 ```
 
-- [ ] Edit README.md and mark all checkboxes in this section. Commit changes.
+- [ ] Edit README.md and mark all checkboxes in this section. Check status and review changes. Commit changes.
 
 ```sh
 $ git status
+$ git diff --staged
+(no output)
+$ git diff
+(changes output)
 $ git add *.md
 $ git status
+$ git diff
+(no output)
+$ git diff --staged
+(changes output)
 $ git commit -m "Mark completed items."
+[master ...] Mark completed items.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 $ git status
+On branch master
+nothing to commit, working directory clean
 ```
 
 - [ ] Publish changes to github.
@@ -151,11 +182,12 @@ if (IsLoggingEnabled)
 
 ```sh
 $ git checkout master
-$ git status
+$ git branch
 * master
   step1
 $ git merge --squash step1
 $ git status
+$ git diff HEAD
 $ git commit -m "Add implementation for Add, Remove and Search methods. Add logging."
 $ git log --oneline
 ```
