@@ -363,7 +363,7 @@ Refactor tests, run tests, review and commit.
 
 Run tests, review and commit.
 
-- [ ] Refactor your code:
+- [ ] Refactor your code.
   * [Extract Method](https://refactoring.guru/extract-method): extract all code in _UserStorageService_ class that access an internal user collection to private method with Get, Set and Query method names.
   * [Move Field](https://refactoring.guru/move-field): move a user collection from _UserStorageServiceBase_ to _UserMemoryCache_ class.
   * [Move Method](https://refactoring.guru/move-method): move your new private Get, Set and Query methods to _UserMemoryCache_ class, and make them public.
@@ -388,18 +388,35 @@ Run tests, review and commit.
 
 - [ ] Strategy: extract serialization functionality as a strategy, and a new strategy to support [XML serialization using XmlSerializer](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer).
 
+Add new tests, run all tests, review and commit.
+
 ![User Repository Strategy](images/UserRepositoryStrategy.png "User Repository Strategy")
 
 - [ ] Give your own meaningful names to _UserMemoryCache_ and _UserMemoryCacheWithState_ classes.
 
 Refactor, run tests, review and commit.
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step5". Merge "step5" into master. Publish.
 
 
-## Step 5
+## Step 6
 
-- [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
+- [ ] New branch "step6".
+
+- [ ] Refactor files in _UserStorageServices_ project: move interfaces and classes related to repository functionality to a separate folder.
+
+Run tests, review and commit.
+
+- [ ] Refactor files in _UserStorageServices_ project: move interfaces and classes related to user storage functionality to a separate folder.
+
+Run tests, review and commit.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step6". Merge "step6" into master. Publish.
+
+
+## Step 7
+
+- [ ] New branch "step5".
 
 - [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
   * ADD event when a new user is added to the user storage service.
@@ -415,9 +432,12 @@ Refactor, run tests, review and commit.
 
 - [ ] Refactor communication between instances to send update notifications to all SLAVE NODES about the changes on MASTER NODE.
 
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
 
-## Step 6
+## Step 8
+
+- [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
 
 - [ ] Refactor the user storage service class to add new functionality to communicate over the network using TCP protocol:
   * For MASTER NODE - send update notifications to all registered SLAVE NODE endpoints.
