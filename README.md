@@ -411,6 +411,12 @@ Run tests, review and commit.
 
 Run tests, review and commit.
 
+- [ ] Apply [Interface Segregation principle (ISP)](http://sergeyteplyakov.blogspot.com.by/2014/08/interface-segregation-principle.html) for user repositories:
+
+![Interface Segregation](images/MasterSlaveRepositoryInterfaceSegregation.png "Interface Segregation")
+
+Modify tests, run tests, review and commit.
+
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step6". Merge "step6" into master. Publish.
 
 
