@@ -411,7 +411,7 @@ Run tests, review and commit.
 
 Run tests, review and commit.
 
-- [ ] Apply [Interface Segregation principle (ISP)](http://sergeyteplyakov.blogspot.com.by/2014/08/interface-segregation-principle.html) for user repositories:
+- [ ] Apply ["interface segregation principle" (ISP)](http://sergeyteplyakov.blogspot.com.by/2014/08/interface-segregation-principle.html):
 
 ![Interface Segregation](images/MasterSlaveRepositoryInterfaceSegregation.png "Interface Segregation")
 
@@ -424,7 +424,7 @@ Modify tests, run tests, review and commit.
 
 - [ ] New branch "step7".
 
-- [ ] Add [the code below from this gist](https://gist.github.com/epam-lab/1afc6a58e5be16cc4282a1b98728a4c2) to your project.
+- [ ] Add [code from this gist](https://gist.github.com/epam-lab/1afc6a58e5be16cc4282a1b98728a4c2) to your project.
 
 Run tests, review and commit.
 
@@ -451,14 +451,54 @@ Add new tests, run tests, review and commit.
 
 ## Step 8
 
-- [ ] Refactor infrastructure code: each instance of the user storage service class should be activated in a separate AppDomain. Both master and slave instances should be placed in a dedicated application domain.
+- [ ] New branch "step8".
+
+- [ ] Refactor infrastructure code: each instance of the user storage service class should be activated in a separate AppDomain. Each MASTER and SLAVE NODE should be created in separate application domain.
 
 ![UserServiceApplication with AppDomains](images/UserServiceWithAppDomains.png "UserServiceApplication with AppDomains")
 
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step8". Merge "step8" into master. Publish.
 
-## Step 8
 
-- [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
+## Step 9
+
+- [ ] New branch "step9".
+
+- [ ] Use an application configuration file to setup service configuration.
+  * There is a [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config that has "serviceConfiguration" name. Use ConfigurationManager.GetSection method to get configuration as an object.
+  * There is no support for network communication. Ignore host and port settings.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step9". Merge "step9" into master. Publish.
+
+
+## Step 10
+
+- [ ] New branch "step10".
+
+- [ ] Refactor validation: create [new attribute classes](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/attributes) and [use reflection](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection) to validate input from the client like in this example:
+
+```sh
+class User
+{
+    [ValidateMaxLength(20)]
+    [ValidateNotNullOrEmpty]
+    [ValidateRegex("([A-Za-z])\w+")]
+    public string FirstName { get; set; }
+
+    [ValidateMaxLength(25)]
+    [ValidateNotNullOrEmpty]
+    [ValidateRegex("([A-Za-z])\w+")]
+    public string LastName { get; set; }
+
+    [ValidateMinMax(18, 110)]
+    public int Age { get; set; }
+}
+```
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step10". Merge "step10" into master. Publish.
+
+
+## Step 11
 
 - [ ] Refactor the user storage service class to add new functionality to communicate over the network using TCP protocol:
   * For MASTER NODE - send update notifications to all registered SLAVE NODE endpoints.
