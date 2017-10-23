@@ -229,7 +229,7 @@ Run all tests to make sure that _UserStorageService_ works as expected.
 
 Review and commit.
 
-- [ ] Extract Class refactoring: extract functionality of validating user data when adding a new user to the storage.
+- [ ] Extract Class: extract functionality of validating user data when adding a new user to the storage.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
   * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (validation of the user data) from _UserStorageService_ class to your new class.
   * Modify _UserStorageService_ to create a new instance of your new class, and use it to validate a user data when adding a new user.
@@ -238,7 +238,7 @@ Run all tests to make sure that _UserStorageService_ works as expected.
 
 Review and commit.
 
-- [ ] [Extract Interface refactoring](https://refactoring.guru/extract-interface): extract an interface for the UserStorageService class.
+- [ ] [Extract Interface](https://refactoring.guru/extract-interface): extract an interface for the UserStorageService class.
   * Create a new interface _IUserStorageService_ in _UserStorageServices_ project, give it a meaningful name.
   * Add all public methods and properties from _UserStorageService_ class to your new interface.
   * Refactor _userStorageService field in _Client_ class: change the field type to your new interface.
@@ -271,9 +271,9 @@ Run tests, review and commit.
   * Refactor your class that validates user data to extract validation logic for each validation rule to a separate class.
   * Use [Composite design pattern](https://refactoring.guru/design-patterns/composite) to create a composite validator.
 
-Run tests, review and commit.
-
 ![Composite Validator](images/ClientAndServiceCompositeValidator.png "Composite Validator")
+
+Run tests, review and commit.
 
 - [ ] Validation exceptions. Create a custom exception for each validation case.Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests.
 
@@ -300,7 +300,7 @@ Run tests, review and commit.
 - [ ] Refactor _UserStorageServiceLog_ to use [Trace Listeners](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/trace-listeners) to log all _UserStorageService_ method calls.
   * Configure [TextWriterTraceListener](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.textwritertracelistener) [by using a configuration file](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners).
   * Replace Console.WriteLine method calls with appropriate Debug or Trace methods.
-  * Add more listeners to the configuration file - for console, XML and CSV output.
+  * Add more listeners to the App.config to support console, XML and CSV output.
 
 Run tests, review and commit.
 
@@ -309,6 +309,25 @@ Run tests, review and commit.
 
 ## Step 4
 
+- [ ] New branch "step4".
+
+- [ ] Test-First: make _UserStorageService_ work in two modes - MASTER AND SLAVE NODE.
+  * Add a new _UserStorageServiceMode_ enum with two values - _MasterNode_ and _SlaveNode_.
+  * Extend _UserStorageService_ class constructor with new parameters - _UserStorageServiceMode_ and IEnumerable<IUserStorageService>.
+  * If the service works as the _MasterNode_ it should allow Add, Remove and Search method calls.
+  * If the service works as the _SlaveNode_ it should allow only Search method call. When Add or Remove is called the service should throw [NotSupportedException](https://msdn.microsoft.com/en-us/library/system.notsupportedexception(v=vs.110).aspx).
+  * If the service works as the _MasterNode_ it should make a call for Add and Remove method to all dependent SLAVE NODES with the same parameters.
+
+![Master-Slave Aggregation](images/ClientAndServiceMasterSlaveAggregation.png "Master-Slave Aggregation")
+
+Add new tests first, then add implementation to _UserStorageService_. Run tests, review and commit.
+
+- [ ] 
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
+
+
+## Step 5
 
 - [ ] Add a persistent storage for storing the service's internal state.
   * Store all necessary information in XML file. Create an [appSettings section](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) in App.config file, and add a new key-value pair to store the file name.
@@ -316,8 +335,6 @@ Run tests, review and commit.
   * The service should also store information about an unique identifier generation.
   * The service should be able to restore it's state using the provided persistent storage.
 
-
-## Step 5
 
 - [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
   * ADD event when a new user is added to the user storage service.
