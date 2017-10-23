@@ -150,9 +150,9 @@ $ git branch
 
 - [ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Review changes. Commit changes.
 
-- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Review and commit.
+- [ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection. Implement Count property getter to return the amount of users in the storage. Review and commit.
 
-- [ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection.
+- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them.
 
 Test-First: add use cases in form of tests to _UserStorageServiceTests_ class (**red** tests), and only then add implementation to the Add method (make your tests **green**).
 
@@ -216,16 +216,27 @@ nothing to commit, working directory clean
 
 TODO: Diagram with expected result.
 
-
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
-- [ ] ([Extract Class refactoring](https://refactoring.guru/extract-class)): extract functionality of generating new user identifier into a new class.
+- [ ] [Extract Class refactoring](https://refactoring.guru/extract-class): extract functionality of generating new user identifier into a new class.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
-  * Test-First: start writing use cases for 
-  * 
+  * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (generation of a new identifier) from _UserStorageService_ class to your new class.
+  * Modify _UserStorageService_ to create a new instance of your new class, and use it to generate an identifier when adding a new user.
+  * Run all tests to make sure that _UserStorageService_ works as expected.
+  * Review and commit.
 
-....
+- [ ] Extract Class refactoring: extract functionality of validating user data when adding a new user to the storage.
+  * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
+  * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (validation of the user data) from _UserStorageService_ class to your new class.
+  * Modify _UserStorageService_ to create a new instance of your new class, and use it to validate a user data when adding a new user.
+  * Run all tests to make sure that _UserStorageService_ works as expected.
+  * Review and commit.
 
+- [ ] [Extract Interface refactoring](https://refactoring.guru/extract-interface): extract an interface for the UserStorageService class.
+  * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
+  * Add all public methods and properties from _UserStorageService_ class to your new interface.
+  * Refactor _userStorageService field in _Client_ class: change the field type to your new interface.
+  * Refactor constructor in _Client_ class to use [Constructor Injection](http://sergeyteplyakov.blogspot.com.by/2012/12/di-constructor-injection.html) to set _userStorageService field.
 
 - [ ] Run StyleCop. Fix issues. Commit.
 
