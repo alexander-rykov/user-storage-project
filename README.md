@@ -326,7 +326,13 @@ The sequence diagram below shows how MASTER NODE communicates with SLAVE NODES w
 
 Add new tests first, then add implementation to _UserStorageService_. Run tests, review and commit.
 
-- [ ] 
+- [ ] Add a new interface _INotificationSubscriber_ and implement [Observer design pattern](https://refactoring.guru/design-patterns/observer) as shown on the class diagram below:
+
+![Master-Slave Observer](images/ClientAndServiceObserver.png "Master-Slave Observer")
+
+Run tests, review and commit.
+
+Add implementation of this interface to _UserStorageService_ class. UserAdded method should only call Add method, UserRemoved method should only call Remove method.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
