@@ -148,11 +148,11 @@ $ git branch
 * step1
 ```
 
-[ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
+- [ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
 
-[ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
+- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
 
-[ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection.
+- [ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection.
 
 Test-First: add use cases in form of tests to _UserStorageServiceTests_ class (**red** tests), and only then add implementation to the Add method (make your tests **green**).
 
@@ -167,7 +167,7 @@ Commit.
 
 Commit.
 
-[ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
+- [ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
 
 ```cs
 if (IsLoggingEnabled)
@@ -177,9 +177,9 @@ if (IsLoggingEnabled)
 ```
   Add logging to Remove and Search methods too.
 
-[ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
+- [ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
 
-[ ] Mark all completed items in README.md. Commit.
+- [ ] Mark all completed items in README.md. Commit.
 
 - Publish "step1" branch to github.
 
