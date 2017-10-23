@@ -107,7 +107,7 @@ The diagram below shows the current relationship between Client and UserStorageS
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
 
-- [ ] Create a new branch with name "step1", and switch to this branch. Make sure that you are on "step1" branch before continue.
+- [ ] [Create a new branch](https://git-scm.com/book/ru/v1/Ветвление-в-Git-Основы-ветвления-и-слияния) with name "step1", and switch to this branch. Make sure that you are on "step1" branch before continue.
 
 ```sh
 $ git checkout -b step1
@@ -116,11 +116,11 @@ $ git branch
 * step1
 ```
 
-- [ ] Add a new **Id** field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
+- [ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
 
-- [ ] UserStorageService class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in UserStorageServiceTests class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
+- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
 
-- [ ] Add an internal storage to UserStorageService class. Consider collections from System.Collections.Generic namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection. Add test first, then add implementation to the Add method. Commit.
+- [ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection. Add test first, then add implementation to the Add method. Commit.
 
 - [ ] Add tests and then add an implementation for Remove method. Commit.
 
@@ -130,7 +130,7 @@ $ git branch
   * Search through Age.
   Commit.
 
-- [ ] Add a new bool field IsLoggingEnabled to UserStorageService class, and add logging functionality to Add method:
+- [ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
 
 ```cs
 if (IsLoggingEnabled)
