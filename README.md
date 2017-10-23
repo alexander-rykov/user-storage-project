@@ -224,22 +224,35 @@ The class diagram below shows the application state after all refactorings in th
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
   * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (generation of a new identifier) from _UserStorageService_ class to your new class.
   * Modify _UserStorageService_ to create a new instance of your new class, and use it to generate an identifier when adding a new user.
-  * Run all tests to make sure that _UserStorageService_ works as expected.
-  * Review and commit.
+
+Run all tests to make sure that _UserStorageService_ works as expected.
+
+Review and commit.
 
 - [ ] Extract Class refactoring: extract functionality of validating user data when adding a new user to the storage.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
   * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (validation of the user data) from _UserStorageService_ class to your new class.
   * Modify _UserStorageService_ to create a new instance of your new class, and use it to validate a user data when adding a new user.
-  * Run all tests to make sure that _UserStorageService_ works as expected.
-  * Review and commit.
+
+Run all tests to make sure that _UserStorageService_ works as expected.
+
+Review and commit.
 
 - [ ] [Extract Interface refactoring](https://refactoring.guru/extract-interface): extract an interface for the UserStorageService class.
   * Create a new interface _IUserStorageService_ in _UserStorageServices_ project, give it a meaningful name.
   * Add all public methods and properties from _UserStorageService_ class to your new interface.
   * Refactor _userStorageService field in _Client_ class: change the field type to your new interface.
-  * Refactor constructor in _Client_ class to use [Constructor Injection](http://sergeyteplyakov.blogspot.com.by/2012/12/di-constructor-injection.html) to set _userStorageService field.
-  * Review and commit.
+  * Refactor constructor in _Client_ class to use [Constructor Injection](http://sergeyteplyakov.blogspot.com.by/2012/12/di-constructor-injection.html) to set _userStorageService_ field.
+
+Run tests, review and commit.
+
+- [ ] Configure logging using App.config.
+  * Refactor your _UserStorageService_ class to use [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) instead of _IsLoggingEnabled_ property.
+  * Use _enableLogging_ boolean switch that is already added to your App.config.
+  * Remove unnecessary _IsLoggingEnabled_ property.
+  * Run application with _enableLogging_ switch enabled and disabled to make sure that logging works properly.
+
+Run tests, review and commit.
 
 - [ ] Run StyleCop. Fix issues. Commit.
 
@@ -278,15 +291,18 @@ Add new tests. Run tests, review and commit.
   * Extract Class: extract logging functionality to a separate class that inherits _IUserStorageService_ class.
   * Use [Decorator design pattern](https://refactoring.guru/design-patterns/decorator) to create a log decorator.
   * Make _UserStorageServiceDecorator_ class abstract.
-  * Remove unnecessary _IsLoggingEnabled_ field from _UserStorageService_ class.
+  * Modify your application code to create a new log decorator and pass it to the _Client_ class instead of _UserStorageService_ class.
 
 ![Log Decorator](images/ClientAndServiceLogDecorator.png "Log Decorator")
 
 Run tests, review and commit.
 
-- [ ] Add logging functionality to log user service API calls.
-  * Add a new [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) to _App.config_. If this switch is enabled all calls to API call should be logged.
-  * You can use logging functionality from System.Diagnostics namespace. See more details in [TextWriterTraceListener](https://msdn.microsoft.com/ru-ru/library/system.diagnostics.textwritertracelistener(v=vs.110).aspx) MSDN article. You can also use NLog or other logging framework, but this is optional.
+- [ ] Refactor _UserStorageServiceLog_ to use [Trace Listeners](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/trace-listeners) to log all _UserStorageService_ method calls.
+  * Configure [TextWriterTraceListener](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.textwritertracelistener) [by using a configuration file](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners).
+  * Replace Console.WriteLine method calls with appropriate Debug or Trace methods.
+  * Add more listeners to the configuration file - for console, XML and CSV output.
+
+Run tests, review and commit.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step3". Merge "step3" into master. Publish.
 
