@@ -326,6 +326,8 @@ The sequence diagram below shows how MASTER NODE communicates with SLAVE NODES w
 
 Add new tests first, then add implementation to _UserStorageService_. Run tests, review and commit.
 
+- [ ] Change the code of you application to have the MASTER NODE that is connected with two SLAVE NODES.
+
 - [ ] Add a new interface _INotificationSubscriber_ and implement [Observer design pattern](https://refactoring.guru/design-patterns/observer) as shown on the class diagram below:
 
 ![Master-Slave Observer](images/ClientAndServiceObserver.png "Master-Slave Observer")
@@ -335,9 +337,9 @@ Run tests, review and commit.
 - [ ] [Replace Conditional with Polymorphism](https://refactoring.guru/replace-conditional-with-polymorphism) for _UserStorageService_ class. Use [generalization-related refactorings](https://refactoring.guru/refactoring/techniques/dealing-with-generalization) to do that.
   * Rename _UserStorageService_ class to _UserStorageServiceBase_ class, and make it abstract.
   * Create two derived classes - _UserStorageServiceMaster_ and _UserStorageServiceSlave_.
-  * Move code behavior that is specific to MASTER to _UserStorageServiceMaster_ class.
-  * Move code bahavior that is specific to SLAVE to _UserStorageServiceSlave_ class.
-  * Add a new property ServiceMode to _IUserStorageService_ interface with _UserStorageServiceMode_ type, and implement it in both derived classes.
+  * Move code behavior that is specific to MASTER NODE to _UserStorageServiceMaster_ class.
+  * Move code behavior that is specific to SLAVE NODE to _UserStorageServiceSlave_ class.
+  * Add a new property _ServiceMode_ to _IUserStorageService_ interface with _UserStorageServiceMode_ type, and implement it in both derived classes.
   * Refactor your code according to the class diagram below:
 
 ![Master-Slave Observer](images/ClientAndServiceBaseClass.png "Master-Slave Observer")
