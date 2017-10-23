@@ -107,10 +107,13 @@ The diagram below shows the current relationship between Client and UserStorageS
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
 
-- [ ] Create a new branch with name "step1", and switch to this branch.
+- [ ] Create a new branch with name "step1", and switch to this branch. Make sure that you are on "step1" branch before continue.
 
 ```sh
 $ git checkout -b step1
+$ git branch
+  master
+* step1
 ```
 
 - [ ] Add a new **Id** field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
@@ -147,7 +150,13 @@ if (IsLoggingEnabled)
 
 ```sh
 $ git checkout master
+$ git status
+* master
+  step1
 $ git merge --squash step1
+$ git status
+$ git commit -m "Add implementation for Add, Remove and Search methods. Add logging."
+$ git log --oneline
 ```
 
 
