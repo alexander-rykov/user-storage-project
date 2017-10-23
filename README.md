@@ -332,7 +332,7 @@ Add new tests first, then add implementation to _UserStorageService_. Run tests,
 
 Run tests, review and commit.
 
-- [ ] [Replace Conditional with Polymorphism](https://refactoring.guru/replace-conditional-with-polymorphism) for UserStorageService.
+- [ ] [Replace Conditional with Polymorphism](https://refactoring.guru/replace-conditional-with-polymorphism) for _UserStorageService_ class. Use [generalization-related refactorings](https://refactoring.guru/refactoring/techniques/dealing-with-generalization) to do that.
   * Rename _UserStorageService_ class to _UserStorageServiceBase_ class, and make it abstract.
   * Create two derived classes - _UserStorageServiceMaster_ and _UserStorageServiceSlave_.
   * Move code behavior that is specific to MASTER to _UserStorageServiceMaster_ class.
