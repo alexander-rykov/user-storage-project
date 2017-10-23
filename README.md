@@ -332,7 +332,17 @@ Add new tests first, then add implementation to _UserStorageService_. Run tests,
 
 Run tests, review and commit.
 
-Add implementation of this interface to _UserStorageService_ class. UserAdded method should only call Add method, UserRemoved method should only call Remove method.
+- [ ] [Replace Conditional with Polymorphism](https://refactoring.guru/replace-conditional-with-polymorphism) for UserStorageService.
+  * Rename _UserStorageService_ class to _UserStorageServiceBase_ class, and make it abstract.
+  * Create two derived classes - _UserStorageServiceMaster_ and _UserStorageServiceSlave_.
+  * Move code behavior that is specific to MASTER to _UserStorageServiceMaster_ class.
+  * Move code bahavior that is specific to SLAVE to _UserStorageServiceSlave_ class.
+  * Add a new property ServiceMode to _IUserStorageService_ interface with _UserStorageServiceMode_ type, and implement it in both derived classes.
+  * Refactor your code according to the class diagram below:
+
+![Master-Slave Observer](images/ClientAndServiceBaseClass.png "Master-Slave Observer")
+
+Refactor tests, run tests, review and commit.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
