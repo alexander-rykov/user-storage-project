@@ -148,24 +148,24 @@ $ git branch
 * step1
 ```
 
-- [ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Commit changes.
+- [ ] Add a new _Id_ field to the _User_ class. Use System.Guid as a field type. The field value should uniquely identify a user in the storage. Review changes. Commit changes.
 
-- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Commit.
+- [ ] _UserStorageService_ class contains Add() method that adds a new user to the storage. The method has one guard clause and one validation statement. Tests for the methods of the class are located in _UserStorageServiceTests_ class. Think what more validation rules you can add here. Add tests for those rules, and then write code to implement them. Review and commit.
 
 - [ ] Add an internal storage to _UserStorageService_ class. Consider collections from [System.Collections.Generic](https://msdn.microsoft.com/en-us/library/system.collections.generic(v=vs.110).aspx) namespace. A new identifier should be populated and assigned to each new entity before adding it to a collection.
 
 Test-First: add use cases in form of tests to _UserStorageServiceTests_ class (**red** tests), and only then add implementation to the Add method (make your tests **green**).
 
-Commit.
+Review and commit.
 
-- [ ] Test-First: add use cases (red) and then add an implementation for Remove method (green). Commit.
+- [ ] Test-First: add use cases (red) and then add an implementation for Remove method (green). Review. Commit.
 
 - [ ] Test-First: add use cases (red) and then add an implementation for Search method (green). Use cases:
   * Search through FirstName.
   * Search through LastName.
   * Search through Age.
 
-Commit.
+Review and commit.
 
 - [ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
 
@@ -175,13 +175,24 @@ if (IsLoggingEnabled)
     Console.WriteLine("Add() method is called.");
 }
 ```
-  Add logging to Remove and Search methods too.
 
-- [ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Commit.
+Add logging to Remove and Search methods too. Review and commit.
 
-- [ ] Mark all completed items in README.md. Commit.
+- [ ] Run StyleCop to make sure the code you have added fits defined code standards. Fix all code issues StyleCop identified. Review and commit.
 
-- Publish "step1" branch to github.
+```sh
+$ git status
+$ git diff
+$ git commit -m "Fix StyleCop issues."
+```
+
+- [ ] Mark all completed items in README.md. Review and commit.
+
+- Publish "step1" branch to [remote branch](https://git-scm.com/book/ru/v2/Ветвление-в-Git-Удалённые-ветки) on github.
+
+```sh
+$ git push -u origin step2
+```
 
 - Switch to master branch. Merge "step1" branch into master. Publish changes to master branch on github.
 
