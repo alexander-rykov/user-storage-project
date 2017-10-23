@@ -422,7 +422,17 @@ Modify tests, run tests, review and commit.
 
 ## Step 7
 
-- [ ] New branch "step5".
+- [ ] New branch "step7".
+
+- [ ] Add [the code below from this gist](https://gist.github.com/epam-lab/1afc6a58e5be16cc4282a1b98728a4c2) to your project.
+
+Run tests, review and commit.
+
+- [ ] Implement:
+
+![Master-Slave Notifications](images/MasterSlaveNotifications.png "Master-Slave Notifications")
+
+Add new tests, run tests, review and commit.
 
 - [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
   * ADD event when a new user is added to the user storage service.
@@ -438,7 +448,7 @@ Modify tests, run tests, review and commit.
 
 - [ ] Refactor communication between instances to send update notifications to all SLAVE NODES about the changes on MASTER NODE.
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step7". Merge "step7" into master. Publish.
 
 
 ## Step 8
