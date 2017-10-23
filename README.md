@@ -357,7 +357,7 @@ Refactor tests, run tests, review and commit.
 
 - [ ] New branch "step5".
 
-- [ ] Create a new interface _IUserRepository_ and two classes like it is shown on the class diagram below:
+- [ ] Create a new interface _IUserRepository_ and two new classes:
 
 ![Master-Slave Repository](images/MasterSlaveRepository.png "Master-Slave Repository")
 
@@ -370,9 +370,28 @@ Run tests, review and commit.
 
 Run tests, review and commit.
 
-- [ ]
+- [ ] Modify UserMemoryCacheWithState:
+  * Stop() should save repository state to the disk file.
+  * Start() should load respository state from the disk file.
+  * Client should call Start() method before making any calls to _IUserStorageService_ to load the repository state.
+  * Client should call Stop() method after all calls to _IUserStorageService_ to save the repository state.
+  * Use "repository.bin" as a filename.
+  * Use [BinaryFormatter](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.formatters.binary.binaryformatter(v=vs.110).aspx) to save the repository user data in binary format (binary serialization).
 
-- [ ] Give your own names to UserMemoryCache and UserMemoryCacheWithState classes. Refactor, run tests, review and commit.
+Run tests, review and commit.
+
+- [ ] Use [ConfigurationManager.AppSettings](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) to store a name of repository user data file. Use the setting value to configure _UserMemoryCacheWithState_ class from the outside.
+
+- [ ] Give your own meaningful names to UserMemoryCache and UserMemoryCacheWithState classes.
+
+Refactor, run tests, review and commit.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
+
+
+## Step 5
+
+- [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
 
 - [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
   * ADD event when a new user is added to the user storage service.
@@ -388,9 +407,7 @@ Run tests, review and commit.
 
 - [ ] Refactor communication between instances to send update notifications to all SLAVE NODES about the changes on MASTER NODE.
 
-- [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
 ## Step 6
 
