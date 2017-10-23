@@ -438,7 +438,13 @@ Add new tests, run tests, review and commit.
 
 ![Master-Slave Serialize Notifications](images/MasterSlaveSerializeNotifications.png "Master-Slave Serialize Notifications")
 
-- [ ] Refactor communication between instances to send update notifications to all SLAVE NODES about the changes on MASTER NODE.
+Modify tests, run tests, review and commit.
+
+- [ ] Composite design pattern: create a composite notification sender to allow MASTER NODE to send notifications to a variable amount of receivers.
+
+![Composite Sender](images/MasterSlaveCompositeSender.png "Master-Slave Composite Sender")
+
+Add new tests, run tests, review and commit.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step7". Merge "step7" into master. Publish.
 
