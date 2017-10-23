@@ -12,10 +12,9 @@ namespace UserStorageApp
         /// <summary>
         /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
-        /// <param name="userStorageService">An instance of the <see cref="UserStorageService"/>. Shouldn't be null.</param>
-        public Client(UserStorageService userStorageService)
+        public Client()
         {
-            _userStorageService = userStorageService;
+            _userStorageService = new UserStorageService();
         }
 
         /// <summary>

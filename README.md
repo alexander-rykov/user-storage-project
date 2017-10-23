@@ -214,7 +214,7 @@ nothing to commit, working directory clean
 
 ## Step 2
 
-TODO: Diagram with expected result.
+![Client and UserStorageService Step 2](images/ClientAndServiceStep2.png "Client and UserStorageService Step 2")
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
