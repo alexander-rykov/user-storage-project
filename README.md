@@ -320,7 +320,7 @@ Run tests, review and commit.
 
 ![Master-Slave Aggregation](images/ClientAndServiceMasterSlaveAggregation.png "Master-Slave Aggregation")
 
-The sequence diagram below shows how MASTER NODE communicates with SLAVE NODES when the Add method is called:
+The [sequence diagram](http://www.uml-diagrams.org/sequence-diagrams.html) below shows how MASTER NODE communicates with SLAVE NODES when the Add method is called:
 
 ![Add Sequence](images/ClientAndServceMasterSlaveAggregationAdd.png "Add Sequence")
 
@@ -343,6 +343,10 @@ Run tests, review and commit.
   * Refactor your code according to the class diagram below:
 
 ![Master-Slave Observer](images/ClientAndServiceBaseClass.png "Master-Slave Observer")
+
+Run tests, review and commit.
+
+- [ ] Replace Observer design pattern with [C# events](https://msdn.microsoft.com/en-us/library/ee817669.aspx#observerpattern_topic3b). Use [C# Event Implementation Fundamentals, Best Practices and Conventions](https://www.codeproject.com/Articles/20550/C-Event-Implementation-Fundamentals-Best-Practices) article to avoid the common mistakes when implementing that task.
 
 Refactor tests, run tests, review and commit.
 
