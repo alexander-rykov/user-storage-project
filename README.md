@@ -134,7 +134,7 @@ Now you have the initial version of your repository uploaded to the github.
 
 ## Step 1
 
-The class diagram below shows the current [relationship](http://creately.com/blog/diagrams/class-diagram-relationships) between Client and UserStorageService classes.
+The [class diagram](http://www.uml-diagrams.org/class-diagrams-overview.html) below shows the current [relationship](http://creately.com/blog/diagrams/class-diagram-relationships) between Client and UserStorageService classes.
 
 ![Client and UserStorageService](images/ClientAndServiceBeginning.png "Client and UserStorageService")
 
@@ -301,6 +301,7 @@ Run tests, review and commit.
   * Configure [TextWriterTraceListener](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.textwritertracelistener) [by using a configuration file](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners).
   * Replace Console.WriteLine method calls with appropriate Debug or Trace methods.
   * Add more listeners to the App.config to support console, XML and CSV output.
+  * Comment CSV and XML listeners before commit.
 
 Run tests, review and commit.
 
@@ -464,9 +465,14 @@ Add new tests, run tests, review and commit.
 
 - [ ] New branch "step9".
 
-- [ ] Use an application configuration file to setup service configuration.
+- [ ] Use an application configuration file to setup services configuration.
   * There is a [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config that has "serviceConfiguration" name. Use ConfigurationManager.GetSection method to get configuration as an object.
   * There is no support for network communication. Ignore host and port settings.
+  * Hardcode any custom behavior (if name=="master-us" or if type="UserStorageMaster") if necessary.
+
+```cs
+var serviceConfiguration = (ServiceConfiguration)System.Configuration.ConfigurationManager.GetSection("serviceConfiguration");
+```
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step9". Merge "step9" into master. Publish.
 
@@ -477,7 +483,7 @@ Add new tests, run tests, review and commit.
 
 - [ ] Refactor validation: create [new attribute classes](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/attributes) and [use reflection](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection) to validate input from the client like in this example:
 
-```sh
+```cs
 class User
 {
     [ValidateMaxLength(20)]
@@ -495,24 +501,67 @@ class User
 }
 ```
 
+Refactor existed tests and add new test, run tests, commit.
+
+- [ ] Create a new attribute and apply it to MASTER NODE and SLAVE NODE classes.
+
+```cs
+[MyApplicationService("UserStorageMaster")]
+class UserStorageServiceMaster
+{}
+
+[MyApplicationService("UserStorageSlave")]
+class UserStorageServiceSlave
+{
+}
+```
+
+Run tests, review, commit.
+
+- [ ] When creating a new service instances use this attributes to find a service type in _UserStorageServices_ assembly that matches a value of the _type_ attribute in _serviceInstance_ node in App.config. Use [Activator class](https://msdn.microsoft.com/en-us/library/system.activator(v=vs.110).aspx) to create a new service instance. Hardcode is allowed here.
+
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step10". Merge "step10" into master. Publish.
 
 
 ## Step 11
 
-- [ ] Refactor the user storage service class to add new functionality to communicate over the network using TCP protocol:
+- [ ] New branch "step11".
+
+- [ ] Add WCF service in front of user storage services.
+
+Run tests, review, commit.
+
+- [ ] Create a new console application and make it use a WCF service for MASTER NODE.
+
+Run tests, review, commit.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step11". Merge "step11" into master. Publish.
+
+
+## Step 12
+
+- [ ] New branch "step12".
+
+- [ ] Replace functionality of notification receivers and senders to allow them to communicate over the network using TCP protocol:
   * For MASTER NODE - send update notifications to all registered SLAVE NODE endpoints.
   * For SLAVE NODE - listen to endpoint and receive update notifications from MASTER NODE.
-  * Note: If you use the other communication approach for MASTER-SLAVE communication, those items wouldn't work for you.
   * Note: Use [NetworkStream](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.networkstream%28v=vs.110%29.aspx), [TcpClient](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.tcpclient(v=vs.110).aspx) and [TcpListener](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.tcplistener(v=vs.110).aspx) or [Socket](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.socket(v=vs.110).aspx) to establish communication channel between nodes.
 
 ![Master-Slave communication for one application](images/UserServiceApplicationSimpleCase.png "Master-Slave communication for one application")
 
-- [ ] Use App.config to store the information about endpoints (hosts and ports) for all registered services.
-
-- [ ] Refactor your application to ensure that your application can work in distributed mode:
-  * There is at least one application with service configuration that works as MASTER node.
-  * There are at least two applications with service configurations that work as SLAVE node.
-  * There is no need to write code that synchronize MASTER and SLAVE nodes, just run the applications in the order you need.
+- [ ] Use host and port settings from an application config to setup notification senders and receivers for all services.
 
 ![Master-Slave communication for distributed application](images/UserServiceApplicationDistributed.png "Master-Slave communication for distributed application")
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step12". Merge "step12" into master. Publish.
+
+
+## Step 13
+
+- [ ] New branch "step13".
+
+- [ ] Remove any hardcode that was added on the previous steps.
+
+- [ ] Review the project codebase with criteria from ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c) presentation.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step13". Merge "step13" into master. Publish.
