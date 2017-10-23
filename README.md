@@ -561,12 +561,12 @@ Run tests, review, commit.
 
 - [ ] Remove any hardcode that was added on the previous steps.
 
-- [ ] Compare the high-level architecture of your project with the slide below:
+- [ ] Compare the high-level architecture of your project with the architecture on the slide below:
 
 ![User Storage Detailed Overview](images/UserStorageDetailedOverview.png "User Storage Detailed Overview")
 
 Does your project has any differences?
 
-- [ ] Review the project codebase with criteria from ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c) presentation.
+- [ ] Review the project codebase with criteria that are mentioned in presentation ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c). Fix and refactor if necessary.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step13". Merge "step13" into master. Publish.
