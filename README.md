@@ -161,9 +161,9 @@ Review and commit.
 - [ ] Test-First: add use cases (red) and then add an implementation for Remove method (green). Review. Commit.
 
 - [ ] Test-First: add use cases (red) and then add an implementation for Search method (green). Use cases:
-  * Search through FirstName.
-  * Search through LastName.
-  * Search through Age.
+  * Search by FirstName.
+  * Search by LastName.
+  * Search by Age.
 
 Review and commit.
 
@@ -235,7 +235,7 @@ The class diagram below shows the application state after all refactorings in th
   * Review and commit.
 
 - [ ] [Extract Interface refactoring](https://refactoring.guru/extract-interface): extract an interface for the UserStorageService class.
-  * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
+  * Create a new interface _IUserStorageService_ in _UserStorageServices_ project, give it a meaningful name.
   * Add all public methods and properties from _UserStorageService_ class to your new interface.
   * Refactor _userStorageService field in _Client_ class: change the field type to your new interface.
   * Refactor constructor in _Client_ class to use [Constructor Injection](http://sergeyteplyakov.blogspot.com.by/2012/12/di-constructor-injection.html) to set _userStorageService field.
@@ -256,21 +256,26 @@ The class diagram below shows the application state after all refactorings in th
 
 - [ ] Composite validator.
   * Refactor your class that validates user data to extract validation logic for each validation rule to a separate class.
-  * Use [Composite design pattern](https://refactoring.guru/design-patterns/composite) to orgainize your code and create a composite validator.
+  * Use [Composite design pattern](https://refactoring.guru/design-patterns/composite) to create a composite validator.
+  * Run tests, review and commit.
 
 ![Composite Validator](images/ClientAndServiceCompositeValidator.png "Composite Validator")
 
-- [ ] Extend search.,
-  * Search through FirstName and LastName.
-  * Search through FirstName and Age.
-  * Search through LastName and Age.
-  * Search through FirstName, LastName and Age.
+- [ ] Validation exceptions. Create a custom exception for each validation case.Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests. Run tests, review and commit.
 
-- [ ] Add a persistent storage for storing the service's internal state.
-  * Store all necessary information in XML file. Create an [appSettings section](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) in App.config file, and add a new key-value pair to store the file name.
-  * The service should be able to store all user records that are added to user storage service to a file on disk using XML format.
-  * The service should also store information about an unique identifier generation.
-  * The service should be able to restore it's state using the provided persistent storage.
+- [ ] Extended search functionality. Add new functionality to your Search method for supporting these use cases:
+  * Search by FirstName and LastName.
+  * Search by FirstName and Age.
+  * Search by LastName and Age.
+  * Search by FirstName, LastName and Age.
+
+Add new tests. Run tests, review and commit.
+
+- [ ] Extract logging functionality.
+  * Extract Class refactoring: extract logging functionality to a separate class that inherits _IUserStorageService_ class.
+  * Use [Decorator design pattern](https://refactoring.guru/design-patterns/decorator) to create a log decorator.
+
+![Log Decorator](images/ClientAndServiceLogDecorator.png "Log Decorator")
 
 - [ ] Add logging functionality to log user service API calls.
   * Add a new [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) to _App.config_. If this switch is enabled all calls to API call should be logged.
@@ -279,10 +284,17 @@ The class diagram below shows the application state after all refactorings in th
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step3". Merge "step3" into master. Publish.
 
 
-## Step 3
-
-
 ## Step 4
+
+
+- [ ] Add a persistent storage for storing the service's internal state.
+  * Store all necessary information in XML file. Create an [appSettings section](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) in App.config file, and add a new key-value pair to store the file name.
+  * The service should be able to store all user records that are added to user storage service to a file on disk using XML format.
+  * The service should also store information about an unique identifier generation.
+  * The service should be able to restore it's state using the provided persistent storage.
+
+
+## Step 5
 
 - [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
   * ADD event when a new user is added to the user storage service.
@@ -301,7 +313,7 @@ The class diagram below shows the application state after all refactorings in th
 - [ ] Use App.config to store the application service configuration. Use [custom configuration sections](https://habrahabr.ru/post/128517/) in App.config to bring more structure to your configuration file.
 
 
-## Step 5
+## Step 6
 
 - [ ] Refactor the user storage service class to add new functionality to communicate over the network using TCP protocol:
   * For MASTER NODE - send update notifications to all registered SLAVE NODE endpoints.
