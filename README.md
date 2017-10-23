@@ -313,7 +313,7 @@ Run tests, review and commit.
 
 - [ ] Test-First: make _UserStorageService_ work in two modes - MASTER AND SLAVE NODE.
   * Add a new _UserStorageServiceMode_ enum with two values - _MasterNode_ and _SlaveNode_.
-  * Extend _UserStorageService_ class constructor with new parameters - _UserStorageServiceMode_ and IEnumerable<IUserStorageService>.
+  * Extend _UserStorageService_ class constructor with new parameters - _UserStorageServiceMode_ and IEnumerable<<IUserStorageService>>.
   * If the service works as the _MasterNode_ it should allow Add, Remove and Search method calls.
   * If the service works as the _SlaveNode_ it should allow only Search method call. When Add or Remove is called the service should throw [NotSupportedException](https://msdn.microsoft.com/en-us/library/system.notsupportedexception(v=vs.110).aspx).
   * If the service works as the _MasterNode_ it should make a call for Add and Remove method to all dependent SLAVE NODES with the same parameters.
