@@ -147,8 +147,7 @@ if (IsLoggingEnabled)
 
 ```sh
 $ git checkout master
-$ git merge step1
-TODO: merge as a one commit
+$ git merge --squash step1
 ```
 
 

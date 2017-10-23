@@ -8,10 +8,10 @@ namespace UserStorageServices
     public class UserStorageService
     {
         /// <summary>
-        /// Gets or sets an amount of users in the storage.
+        /// Gets the number of elements contained in the storage.
         /// </summary>
         /// <returns>An amount of users in the storage.</returns>
-        public int Count { get; set; }
+        public int Count { get; }
 
         /// <summary>
         /// Adds a new <see cref="User"/> to the storage.
