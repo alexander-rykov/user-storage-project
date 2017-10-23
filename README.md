@@ -237,6 +237,7 @@ TODO: Diagram with expected result.
   * Add all public methods and properties from _UserStorageService_ class to your new interface.
   * Refactor _userStorageService field in _Client_ class: change the field type to your new interface.
   * Refactor constructor in _Client_ class to use [Constructor Injection](http://sergeyteplyakov.blogspot.com.by/2012/12/di-constructor-injection.html) to set _userStorageService field.
+  * Review and commit.
 
 - [ ] Run StyleCop. Fix issues. Commit.
 
