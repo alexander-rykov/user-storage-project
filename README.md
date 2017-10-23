@@ -128,6 +128,7 @@ $ git branch
   * Search through FirstName.
   * Search through LastName.
   * Search through Age.
+
 Commit.
 
 - [ ] Add a new bool field _IsLoggingEnabled_ to _UserStorageService_ class, and add logging functionality to Add method:
