@@ -428,27 +428,26 @@ Modify tests, run tests, review and commit.
 
 Run tests, review and commit.
 
-- [ ] Implement:
+- [ ] Add new implementation and refactor existed functionality:
 
 ![Master-Slave Notifications](images/MasterSlaveNotifications.png "Master-Slave Notifications")
 
 Add new tests, run tests, review and commit.
 
-- [ ] Create a new class for an update notification to reflect the changes on MASTER NODE:
-  * ADD event when a new user is added to the user storage service.
-  * REMOVE event when an existed user is removed from the user storage service.
+- [ ] Refactor you code: serialize _NotificationContainer_ to XML and pass it to receiver as a string.
 
-- [ ] Refactor the user storage service class to add an user service mode. The service should have only two modes: MASTER and SLAVE.
-  * MASTER NODE should support all operations (add, remove, search), and have ability to use persistent storage.
-  * SLAVE NODE should support only search operation, and it should throw an [user-defined exception](https://msdn.microsoft.com/en-us/library/87cdya3t(v=vs.110).aspx). SLAVE NODE should have no persitant storage, and the only way to change the service state should be to send the service a notification, a message with update information.
-
-- [ ] Refactor infrastructure code: each instance of the user storage service class should be activated in a separate AppDomain. Both master and slave instances should be placed in a dedicated application domain.
-
-![UserServiceApplication with AppDomains](images/UserServiceWithAppDomains.png "UserServiceApplication with AppDomains")
+![Master-Slave Serialize Notifications](images/MasterSlaveSerializeNotifications.png "Master-Slave Serialize Notifications")
 
 - [ ] Refactor communication between instances to send update notifications to all SLAVE NODES about the changes on MASTER NODE.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step7". Merge "step7" into master. Publish.
+
+
+## Step 8
+
+- [ ] Refactor infrastructure code: each instance of the user storage service class should be activated in a separate AppDomain. Both master and slave instances should be placed in a dedicated application domain.
+
+![UserServiceApplication with AppDomains](images/UserServiceWithAppDomains.png "UserServiceApplication with AppDomains")
 
 
 ## Step 8
