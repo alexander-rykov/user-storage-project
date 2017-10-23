@@ -512,8 +512,7 @@ class UserStorageServiceMaster
 
 [MyApplicationService("UserStorageSlave")]
 class UserStorageServiceSlave
-{
-}
+{}
 ```
 
 Run tests, review, commit.
