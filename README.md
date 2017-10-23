@@ -386,6 +386,10 @@ Run all tests, review and commit.
 
 Run tests, review and commit.
 
+- [ ] Strategy: extract serialization functionality as a strategy, and a new strategy to support [XML serialization using XmlSerializer](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer).
+
+![User Repository Strategy](images/UserRepositoryStrategy.png "User Repository Strategy")
+
 - [ ] Give your own meaningful names to _UserMemoryCache_ and _UserMemoryCacheWithState_ classes.
 
 Refactor, run tests, review and commit.
