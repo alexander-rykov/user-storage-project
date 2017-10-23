@@ -357,7 +357,7 @@ Refactor tests, run tests, review and commit.
 
 - [ ] New branch "step5".
 
-- [ ] Create a new interface _IUserRepository_ and two new classes:
+- [ ] Test-First: create a new interface _IUserRepository_ and two new classes:
 
 ![Master-Slave Repository](images/MasterSlaveRepository.png "Master-Slave Repository")
 
@@ -368,21 +368,25 @@ Run tests, review and commit.
   * [Move Field](https://refactoring.guru/move-field): move a user collection from _UserStorageServiceBase_ to _UserMemoryCache_ class.
   * [Move Method](https://refactoring.guru/move-method): move your new private Get, Set and Query methods to _UserMemoryCache_ class, and make them public.
 
-Run tests, review and commit.
+Add new tests, run all tests, review and commit.
 
-- [ ] Modify UserMemoryCacheWithState:
+- [ ] Modify _UserMemoryCacheWithState_:
   * Stop() should save repository state to the disk file.
   * Start() should load respository state from the disk file.
   * Client should call Start() method before making any calls to _IUserStorageService_ to load the repository state.
   * Client should call Stop() method after all calls to _IUserStorageService_ to save the repository state.
-  * Use "repository.bin" as a filename.
+  * Use "repository.bin" as a file name.
   * Use [BinaryFormatter](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.formatters.binary.binaryformatter(v=vs.110).aspx) to save the repository user data in binary format (binary serialization).
 
-Run tests, review and commit.
+Add new integration tests ([save to a file, load from a file](https://stackoverflow.com/questions/20265369/how-to-do-integration-testing-in-net-with-real-files)).
+
+Run all tests, review and commit.
 
 - [ ] Use [ConfigurationManager.AppSettings](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager.appsettings(v=vs.110).aspx) to store a name of repository user data file. Use the setting value to configure _UserMemoryCacheWithState_ class from the outside.
 
-- [ ] Give your own meaningful names to UserMemoryCache and UserMemoryCacheWithState classes.
+Run tests, review and commit.
+
+- [ ] Give your own meaningful names to _UserMemoryCache_ and _UserMemoryCacheWithState_ classes.
 
 Refactor, run tests, review and commit.
 
