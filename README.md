@@ -132,7 +132,7 @@ $ git push
 Now you have the initial version of your repository uploaded to the github.
 
 
-## Step 1
+## Step 1 - Service
 
 The [class diagram](http://www.uml-diagrams.org/class-diagrams-overview.html) below shows the current [relationship](http://creately.com/blog/diagrams/class-diagram-relationships) between Client and UserStorageService classes.
 
@@ -212,7 +212,7 @@ nothing to commit, working directory clean
 ```
 
 
-## Step 2
+## Step 2 - Extract
 
 The class diagram below shows the application state after all refactorings in the current step.
 
@@ -263,7 +263,7 @@ Run tests, review and commit.
 - Switch to master branch. Merge "step2" branch into master. Publish changes to master branch on github.
 
 
-## Step 3
+## Step 3 - Composite and Decorator
 
 - [ ] New branch "step3".
 
@@ -308,7 +308,7 @@ Run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step3". Merge "step3" into master. Publish.
 
 
-## Step 4
+## Step 4 - Master-Slave
 
 - [ ] New branch "step4".
 
@@ -354,7 +354,7 @@ Refactor tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
 
-## Step 5
+## Step 5 - Repository
 
 - [ ] New branch "step5".
 
@@ -400,7 +400,7 @@ Refactor, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step5". Merge "step5" into master. Publish.
 
 
-## Step 6
+## Step 6 - Refactoring
 
 - [ ] New branch "step6".
 
@@ -421,7 +421,7 @@ Modify tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step6". Merge "step6" into master. Publish.
 
 
-## Step 7
+## Step 7 - Notifications
 
 - [ ] New branch "step7".
 
@@ -450,7 +450,7 @@ Add new tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step7". Merge "step7" into master. Publish.
 
 
-## Step 8
+## Step 8 - Application Domains
 
 - [ ] New branch "step8".
 
@@ -461,7 +461,7 @@ Add new tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step8". Merge "step8" into master. Publish.
 
 
-## Step 9
+## Step 9 - Configuration
 
 - [ ] New branch "step9".
 
@@ -477,7 +477,7 @@ var serviceConfiguration = (ServiceConfiguration)System.Configuration.Configurat
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step9". Merge "step9" into master. Publish.
 
 
-## Step 10
+## Step 10 - Reflection
 
 - [ ] New branch "step10".
 
@@ -522,7 +522,7 @@ Run tests, review, commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step10". Merge "step10" into master. Publish.
 
 
-## Step 11
+## Step 11 - Thread Synchronization
 
 - [ ] New branch "step11".
 
@@ -537,7 +537,7 @@ Run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step11". Merge "step11" into master. Publish.
 
 
-## Step 12
+## Step 12 - WCF
 
 The diagram below shows the expected application architecture:
 
@@ -556,7 +556,7 @@ Run tests, review, commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step12". Merge "step12" into master. Publish.
 
 
-## Step 13
+## Step 13 - Networking
 
 - [ ] New branch "step13".
 
@@ -570,7 +570,7 @@ Run tests, review, commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step13". Merge "step13" into master. Publish.
 
 
-## Step 14
+## Step 14 - Checkpoint
 
 - [ ] New branch "step14".
 
