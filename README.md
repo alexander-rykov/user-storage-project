@@ -222,6 +222,8 @@ The class diagram below shows the application state after all refactorings in th
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
+_UserStorageService_ is responsible to only for storing users, but also for generating new identifier and data validation. You will apply [Single Responsibility Principle (SRP)](http://sergeyteplyakov.blogspot.com.by/2014/08/single-responsibility-principle.html) to the service in the next two refactorings.
+
 - [ ] [Extract Class refactoring](https://refactoring.guru/extract-class): extract [strategy](https://refactoring.guru/design-patterns/strategy) of generating new user identifier into a new class.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
   * Test-First: create a new class in _UserStorageServices_ project that implements the interface, and move your code (generation of a new identifier) from _UserStorageService_ class to your new class.
