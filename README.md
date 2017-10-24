@@ -402,7 +402,7 @@ Refactor, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step5". Merge "step5" into master. Publish.
 
 
-## Step 6 - Refactoring
+## Step 6 - Refactor
 
 - [ ] New branch "step6".
 
@@ -423,7 +423,7 @@ Modify tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step6". Merge "step6" into master. Publish.
 
 
-## Step 7 - Notifications
+## Step 7 - Notify
 
 - [ ] New branch "step7".
 
@@ -463,7 +463,7 @@ Add new tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step8". Merge "step8" into master. Publish.
 
 
-## Step 9 - Configuration
+## Step 9 - Configure
 
 - [ ] New branch "step9".
 
@@ -479,7 +479,7 @@ var serviceConfiguration = (ServiceConfiguration)System.Configuration.Configurat
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step9". Merge "step9" into master. Publish.
 
 
-## Step 10 - Reflection
+## Step 10 - Reflect
 
 - [ ] New branch "step10".
 
@@ -524,7 +524,7 @@ Run tests, review, commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step10". Merge "step10" into master. Publish.
 
 
-## Step 11 - Thread Synchronization
+## Step 11 - Synchronize
 
 - [ ] New branch "step11".
 
@@ -547,18 +547,22 @@ The diagram below shows the expected application architecture:
 
 - [ ] New branch "step11".
 
-- [ ] Design and implement a new WCF service to allow other applications access service endpoints to work UserStorage services. Each UserStorage service should have its own WCF service for handling incoming requests. Use _apiPort_ service parameter in App.config and "http://localhost:apiPort/userStorage" template for WCF service endpoint. You can use [DiagnosticsService](UserStorage/UserStorage.Diagnostics/DiagnosticsService.cs) as an example, just notice that DiagnosticsService works as a [singleton](https://msdn.microsoft.com/en-us/library/system.servicemodel.instancecontextmode(v=vs.110).aspx).
+- [ ] Design and implement a new WCF service to allow other applications access service endpoints to work UserStorage services. Each UserStorage service should have its own WCF service for handling incoming requests. Use _apiPort_ service parameter in App.config and "http://localhost:apiPort/userStorage" template for WCF service endpoint. You can use [DiagnosticsService](UserStorage/UserStorage.Diagnostics/DiagnosticsService.cs) as an example, just notice that DiagnosticsService works as a [singleton](https://msdn.microsoft.com/en-us/library/system.servicemodel.instancecontextmode(v=vs.110).aspx) and configured using App.config file.
 
 Run tests, review, commit.
 
-- [ ] Create a new console application and make it use a WCF service for MASTER NODE.
+- [ ] Create a new console application and connect to MASTER NODE WCF service. You can use [UserStorageMonitor](UserStorage/UserStorageMonitor) as an example.
+
+Run tests, review, commit.
+
+- [ ] Create a new console application and connect to MASTER NODE WCF service. You can use [UserStorageMonitor](UserStorage/UserStorageMonitor) as an example.
 
 Run tests, review, commit.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step12". Merge "step12" into master. Publish.
 
 
-## Step 13 - Networking
+## Step 13 - Network
 
 - [ ] New branch "step13".
 
