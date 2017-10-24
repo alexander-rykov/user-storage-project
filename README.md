@@ -524,6 +524,21 @@ Run tests, review, commit.
 
 ## Step 11
 
+- [ ] New branch "step11".
+
+- [ ] The collection in your repository is going to be used in multi-threading environment, and this may lead to concurrency issues. Make your repository thread-safe using [lock statement](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/lock-statement).
+
+Run tests, review and commit.
+
+- [ ] Make your repository thread-safe using [ReaderWriterLockSlim class](https://docs.microsoft.com/en-us/dotnet/standard/threading/reader-writer-locks).
+
+Run tests, review and commit.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step11". Merge "step11" into master. Publish.
+
+
+## Step 12
+
 The diagram below shows the expected application architecture:
 
 ![User Storage Detailed Overview](images/UserStorageDetailedOverview.png "User Storage Detailed Overview")
@@ -538,12 +553,12 @@ Run tests, review, commit.
 
 Run tests, review, commit.
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step11". Merge "step11" into master. Publish.
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step12". Merge "step12" into master. Publish.
 
 
-## Step 12
+## Step 13
 
-- [ ] New branch "step12".
+- [ ] New branch "step13".
 
 - [ ] Replace functionality of notification receivers and senders to allow them to communicate over the network using TCP protocol:
   * For MASTER NODE - send update notifications to all registered SLAVE NODE endpoints.
@@ -552,15 +567,15 @@ Run tests, review, commit.
 
 - [ ] Use host and port settings from an application config to setup notification senders and receivers for all services.
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step12". Merge "step12" into master. Publish.
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step13". Merge "step13" into master. Publish.
 
 
-## Step 13
+## Step 14
 
-- [ ] New branch "step13".
+- [ ] New branch "step14".
 
 - [ ] Remove any hardcode that was added on the previous steps.
 
 - [ ] Review the project codebase with criteria that are mentioned in presentation ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c). Fix and refactor if necessary.
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step13". Merge "step13" into master. Publish.
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step14". Merge "step14" into master. Publish.
