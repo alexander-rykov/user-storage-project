@@ -279,7 +279,7 @@ Run tests, review and commit.
 
 Run tests, review and commit.
 
-- [ ] Validation exceptions. Create a custom exception for each validation case. Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests.
+- [ ] Validation exceptions. Create a custom exception for each validation case. Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimitsException. Each validator rule class should throw its own exception. Modify tests.
 
 Run tests, review and commit.
 
@@ -292,7 +292,7 @@ Run tests, review and commit.
 Add new tests. Run tests, review and commit.
 
 - [ ] Extract logging functionality.
-  * Extract Class: extract logging functionality to a separate class that inherits _IUserStorageService_ class.
+  * Extract Class: extract logging functionality to a separate class that inherits _IUserStorageService_ interface.
   * Use [Decorator design pattern](https://refactoring.guru/design-patterns/decorator) to create a log decorator.
   * Make _UserStorageServiceDecorator_ class abstract.
   * Modify your application code to create a new log decorator and pass it to the _Client_ class instead of _UserStorageService_ class.
