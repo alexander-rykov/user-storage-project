@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a5340e15-2a66-45ad-8289-1d232397ab1d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/diagnostics" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="diagnostics.disco" MetadataType="Disco" ID="dae2d107-5ca7-4b36-8239-4ada63a282f3" SourceId="1" SourceUrl="http://localhost:8080/diagnostics?disco" />
+    <MetadataFile FileName="Diagnostics.wsdl" MetadataType="Wsdl" ID="ec0228a0-5741-44b3-9b57-5878126863bb" SourceId="1" SourceUrl="http://localhost:8080/diagnostics?wsdl" />
+    <MetadataFile FileName="diagnostics2.xsd" MetadataType="Schema" ID="94b4fabf-ed88-4ad1-a6a9-b5478309df43" SourceId="1" SourceUrl="http://localhost:8080/diagnostics?xsd=xsd2" />
+    <MetadataFile FileName="diagnostics3.xsd" MetadataType="Schema" ID="a30ae56d-a197-443c-bb5a-2e67e8ab8a7c" SourceId="1" SourceUrl="http://localhost:8080/diagnostics?xsd=xsd3" />
+    <MetadataFile FileName="diagnostics1.xsd" MetadataType="Schema" ID="60ebd88d-a7c7-4d8b-a43b-ecd4e9a1a603" SourceId="1" SourceUrl="http://localhost:8080/diagnostics?xsd=xsd0" />
+    <MetadataFile FileName="diagnostics.xsd" MetadataType="Schema" ID="345925e3-c6ec-45cf-9a9e-0ed8e5a5702e" SourceId="1" SourceUrl="http://localhost:8080/diagnostics?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
