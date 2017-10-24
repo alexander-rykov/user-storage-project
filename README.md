@@ -555,7 +555,7 @@ The diagram below shows the expected application architecture:
 
 Run tests, review, commit.
 
-- [ ] Create a new console application and connect to MASTER NODE WCF service. You can use [UserStorageMonitor](UserStorage/UserStorageMonitor) as an example.
+- [ ] Create a new console application and connect to WCF services for MASTER and SLAVE NODES. You can use [UserStorageMonitor](UserStorage/UserStorageMonitor) as an example.
 
 Run tests, review, commit.
 
