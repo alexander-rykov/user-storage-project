@@ -555,7 +555,7 @@ Run tests, review, commit.
 
 Run tests, review, commit.
 
-- [ ] Create a new console application and connect to MASTER NODE WCF service. You can use [UserStorageMonitor](UserStorage/UserStorageMonitor) as an example.
+- [ ] Implement [MyDiagnostics](UserStorage/UserStorageApp/MyDiagnostics.cs) service to show actual status of all loaded services online.
 
 Run tests, review, commit.
 
