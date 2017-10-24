@@ -8,7 +8,7 @@ UserStorage service is a simple service that stores user records and provides an
 
 In other words, MASTER NODE accepts READ (SEARCH) and WRITE (ADD/REMOVE) operations, changes its state, and sends an update to all SLAVES NODE that accepts only READ (SEARCH) operations. If a client sends WRITE request to a SLAVE NODE, the node replies with an error.
 
-Described approach when MASTER NODE owns original data and other SLAVE NODES have only the copy is knows [MASTER-SLAVE data replication](https://ruhighload.com/post/%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85). Possible solutions here are:
+Described approach when MASTER NODE owns original data and other SLAVE NODES have only the copy is known as [MASTER-SLAVE data replication](https://ruhighload.com/post/%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85). Possible solutions here are:
 * MASTER NODE sends updates to all SLAVE NODES by himself.
 * SLAVE NODES sends a request to MASTER NODE and MASTER replies with a bunch of updates.
 * Other...
@@ -277,7 +277,7 @@ Run tests, review and commit.
 
 Run tests, review and commit.
 
-- [ ] Validation exceptions. Create a custom exception for each validation case.Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests.
+- [ ] Validation exceptions. Create a custom exception for each validation case. Examples: FirstNameIsNullOrEmptyException, LastNameExceedsLimitsException, AgeExceedsLimisException. Each validator rule class should throw its own exception. Modify tests.
 
 Run tests, review and commit.
 
@@ -329,7 +329,7 @@ The [sequence diagram](http://www.uml-diagrams.org/sequence-diagrams.html) below
 
 Add new tests first, then add implementation to _UserStorageService_. Run tests, review and commit.
 
-- [ ] Change the code of you application to have the MASTER NODE that is connected with two SLAVE NODES.
+- [ ] Change the code of your application to have the MASTER NODE that is connected with two SLAVE NODES.
 
 - [ ] Add a new interface _INotificationSubscriber_ and implement [Observer design pattern](https://refactoring.guru/design-patterns/observer) as shown on the class diagram below:
 
