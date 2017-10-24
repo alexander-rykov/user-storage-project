@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiServiceHost.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="MyDiagnostics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceHostExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -13,5 +13,8 @@ namespace UserStorage.Diagnostics
 
         [DataMember(Name = "ServiceUrl")]
         public string Url { get; set; }
+
+        [DataMember(Name = "ServiceDebugInfo")]
+        public string DebugInfo { get; set; }
     }
 }

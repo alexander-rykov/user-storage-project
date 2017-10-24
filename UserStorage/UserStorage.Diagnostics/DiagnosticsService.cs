@@ -5,7 +5,7 @@ using System.ServiceModel;
 
 namespace UserStorage.Diagnostics
 {
-    [ServiceBehavior(Name = "Diagnostics", InstanceContextMode = InstanceContextMode.Single)]
+    [ServiceBehavior(Name = "Diagnostics", InstanceContextMode = InstanceContextMode.Single, ConfigurationName = "DiagnosticsService")]
     public abstract class DiagnosticsService : IServiceMonitor
     {
         protected abstract ReadOnlyCollection<ServiceInfo> ServiceInfoCollection { get; }

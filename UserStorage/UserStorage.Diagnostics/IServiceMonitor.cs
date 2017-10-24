@@ -2,7 +2,7 @@
 
 namespace UserStorage.Diagnostics
 {
-    [ServiceContract(Name = "Monitor")]
+    [ServiceContract(Name = "Monitor", ConfigurationName = "ServiceMonitor")]
     public interface IServiceMonitor
     {
         [OperationContract(Name = "GetServicesCount")]

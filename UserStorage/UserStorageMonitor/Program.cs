@@ -41,7 +41,7 @@ namespace UserStorageMonitor
             Console.WriteLine("\nServices:");
             foreach (var service in services)
             {
-                Console.WriteLine("\tName: {0}, Type: {1}, Url: {2}", service.ServiceName, service.ServiceType, service.ServiceUrl);
+                Console.WriteLine("\tName: {0}, Type: {1}, Url: {2} ({3})", service.ServiceName, service.ServiceType, service.ServiceUrl, service.ServiceDebugInfo);
             }
 
             Console.WriteLine("\nPress Enter to continue.");

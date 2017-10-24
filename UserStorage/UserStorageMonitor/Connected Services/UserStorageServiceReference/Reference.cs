@@ -132,6 +132,9 @@ namespace UserStorageMonitor.UserStorageServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ServiceDebugInfoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -147,6 +150,19 @@ namespace UserStorageMonitor.UserStorageServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ServiceDebugInfo {
+            get {
+                return this.ServiceDebugInfoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServiceDebugInfoField, value) != true)) {
+                    this.ServiceDebugInfoField = value;
+                    this.RaisePropertyChanged("ServiceDebugInfo");
+                }
             }
         }
         

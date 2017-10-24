@@ -13,7 +13,6 @@ namespace UserStorageApp
 
         public MyDiagnostics(IEnumerable<ServiceInfo> services)
         {
-            // Guard clause.
             if (services == null)
             {
                 throw new ArgumentNullException(nameof(services));
@@ -32,7 +31,6 @@ namespace UserStorageApp
 
         public static MyDiagnostics Create(ServiceConfiguration serviceConfiguration)
         {
-            // Guard clause.
             if (serviceConfiguration == null)
             {
                 throw new ArgumentNullException(nameof(serviceConfiguration));
@@ -42,7 +40,8 @@ namespace UserStorageApp
             {
                 Type = si.Type,
                 Name = si.Name,
-                Url = string.Format("http://localhost:{0}/userStorage", si.ApiPort)
+                Url = string.Format("http://localhost:{0}/userStorage", si.ApiPort),
+                DebugInfo = string.Format("Users available: {0}", 0)
             }).ToArray();
 
             return new MyDiagnostics(services);

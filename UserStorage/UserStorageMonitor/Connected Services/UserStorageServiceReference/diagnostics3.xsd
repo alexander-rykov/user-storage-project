@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfServiceInfo" nillable="true" type="tns:ArrayOfServiceInfo" />
   <xs:complexType name="ServiceInfo">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceDebugInfo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServiceType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServiceUrl" nillable="true" type="xs:string" />
