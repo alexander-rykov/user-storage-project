@@ -524,6 +524,10 @@ Run tests, review, commit.
 
 ## Step 11
 
+The diagram below shows the expected application architecture:
+
+![User Storage Detailed Overview](images/UserStorageDetailedOverview.png "User Storage Detailed Overview")
+
 - [ ] New branch "step11".
 
 - [ ] Add WCF service in front of user storage services.
@@ -546,11 +550,7 @@ Run tests, review, commit.
   * For SLAVE NODE - listen to endpoint and receive update notifications from MASTER NODE.
   * Note: Use [NetworkStream](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.networkstream%28v=vs.110%29.aspx), [TcpClient](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.tcpclient(v=vs.110).aspx) and [TcpListener](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.tcplistener(v=vs.110).aspx) or [Socket](https://msdn.microsoft.com/ru-ru/library/system.net.sockets.socket(v=vs.110).aspx) to establish communication channel between nodes.
 
-![Master-Slave communication for one application](images/UserServiceApplicationSimpleCase.png "Master-Slave communication for one application")
-
 - [ ] Use host and port settings from an application config to setup notification senders and receivers for all services.
-
-![Master-Slave communication for distributed application](images/UserServiceApplicationDistributed.png "Master-Slave communication for distributed application")
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step12". Merge "step12" into master. Publish.
 
@@ -560,12 +560,6 @@ Run tests, review, commit.
 - [ ] New branch "step13".
 
 - [ ] Remove any hardcode that was added on the previous steps.
-
-- [ ] Compare the high-level architecture of your project with the architecture on the slide below:
-
-![User Storage Detailed Overview](images/UserStorageDetailedOverview.png "User Storage Detailed Overview")
-
-Does your project has any differences?
 
 - [ ] Review the project codebase with criteria that are mentioned in presentation ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c). Fix and refactor if necessary.
 
