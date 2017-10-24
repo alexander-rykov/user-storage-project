@@ -30,6 +30,8 @@ In the [UserStorage](UserStorage) folder you can find a solution template that y
 * [UserStorageServices](UserStorage/UserStorageServices) - a class library project for all service related code.
 * [UserStorageServices.Tests](UserStorage/UserStorageServices.Tests) - a class library project with all unit tests for service related behavior.
 * [ServiceConfigurationSection](UserStorage/ServiceConfigurationSection) - a class library project that stores classes for handling _serviceConfiguration_ custom section in App.config.
+* [UserStorage.Diagnostics](UserStorage/UserStorage.Diagnostics) - a class library project that stores WCF contracts for DiagnosticsService.
+* [UserStorageMonitor](UserStorage/UserStorageMonitor) - a console application project that access DiagnosticsService and prints debu
 
 UserStorage service operates over an entity that describes a user and has relevant name - [User class](UserStorage/UserStorageServices/User.cs) in UserStorageServices project. This class is pretty simple, and has FirstName, LastName and Age fields only.
 
@@ -263,7 +265,7 @@ Run tests, review and commit.
 - Switch to master branch. Merge "step2" branch into master. Publish changes to master branch on github.
 
 
-## Step 3 - Composite and Decorator
+## Step 3 - Compose and decorate
 
 - [ ] New branch "step3".
 
@@ -545,7 +547,7 @@ The diagram below shows the expected application architecture:
 
 - [ ] New branch "step11".
 
-- [ ] Add WCF service in front of user storage services.
+- [ ] Design and implement a new WCF service to allow other applications access service endpoints to work UserStorage services. Each UserStorage service should have its own WCF service for handling incoming requests. Use _apiPort_ service parameter in App.config and "http://localhost:\<apiPort\>/userStorage" template for WCF service endpoint.
 
 Run tests, review, commit.
 
