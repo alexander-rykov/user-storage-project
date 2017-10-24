@@ -30,8 +30,8 @@ In the [UserStorage](UserStorage) folder you can find a solution template that y
 * [UserStorageServices](UserStorage/UserStorageServices) - a class library project for all service related code.
 * [UserStorageServices.Tests](UserStorage/UserStorageServices.Tests) - a class library project with all unit tests for service related behavior.
 * [ServiceConfigurationSection](UserStorage/ServiceConfigurationSection) - a class library project that stores classes for handling _serviceConfiguration_ custom section in App.config.
-* [UserStorage.Diagnostics](UserStorage/UserStorage.Diagnostics) - a class library project that stores WCF contracts for DiagnosticsService.
-* [UserStorageMonitor](UserStorage/UserStorageMonitor) - a console application project that access DiagnosticsService and prints debu
+* [UserStorage.Diagnostics](UserStorage/UserStorage.Diagnostics) - a class library project that stores WCF contracts for the special DiagnosticsService that monitors current state of other services.
+* [UserStorageMonitor](UserStorage/UserStorageMonitor) - a console application project that access DiagnosticsService and prints service state.
 
 UserStorage service operates over an entity that describes a user and has relevant name - [User class](UserStorage/UserStorageServices/User.cs) in UserStorageServices project. This class is pretty simple, and has FirstName, LastName and Age fields only.
 
