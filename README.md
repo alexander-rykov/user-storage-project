@@ -222,7 +222,7 @@ The class diagram below shows the application state after all refactorings in th
 
 - [ ] Create a new branch with name "step2", and switch to this branch.
 
-_UserStorageService_ is responsible to only for storing users, but also for generating new identifier and data validation. You will apply [Single Responsibility Principle (SRP)](http://sergeyteplyakov.blogspot.com.by/2014/08/single-responsibility-principle.html) to the service in the next two refactorings.
+_UserStorageService_ is responsible not only for storing user records, but also for generating new identifier and data validation. You will apply [Single Responsibility Principle (SRP)](http://sergeyteplyakov.blogspot.com.by/2014/08/single-responsibility-principle.html) to the service in the next two refactorings.
 
 - [ ] [Extract Class refactoring](https://refactoring.guru/extract-class): extract [strategy](https://refactoring.guru/design-patterns/strategy) of generating new user identifier into a new class.
   * Create a new interface in _UserStorageServices_ project, give it a meaningful name.
@@ -591,3 +591,28 @@ Run tests, review, commit.
 - [ ] Review the project codebase with criteria that are mentioned in presentation ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c). Fix and refactor if necessary.
 
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step14". Merge "step14" into master. Publish.
+
+
+## Step 15 - Cache
+
+- [ ] New branch "step15".
+
+- [ ] Apply Decorator design pattern to repository:
+
+![Repository Decorators](images/RepositoryDecorators.png "Repository Decorators")
+
+Run tests, review, commit.
+
+- [ ] Implement _UserRepositoryDelayer_ - this class should wait for a timeout before calling the next repository in the decorator chain. The goal of this class is to emulate slow storage.
+
+Run tests, review, commit.
+
+- [ ] Implement _UserRepositoryCache_ using [MemoryCache](https://habrahabr.ru/company/infopulse/blog/258247/) class. This class should store a user object in a cache before it will expire (use expirationInterval).
+
+Run tests, review, commit.
+
+- [ ] Create a chain of decorators: UserRepositoryCache->UserRepositoryDelayer->UserRepositoryCache(WithState). Test the cache behavior.
+
+Run tests, review, commit.
+
+- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step15". Merge "step15" into master. Publish.
