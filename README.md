@@ -356,7 +356,7 @@ Refactor tests, run tests, review and commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step4". Merge "step4" into master. Publish.
 
 
-## Step 5 - Repository
+## Step 5 - Persistence
 
 - [ ] New branch "step5".
 
@@ -396,6 +396,10 @@ Add new tests, run all tests, review and commit.
 ![User Repository Strategy](images/UserRepositoryStrategy.png "User Repository Strategy")
 
 - [ ] Give your own meaningful names to _UserMemoryCache_ and _UserMemoryCacheWithState_ classes.
+
+Refactor, run tests, review and commit.
+
+- [ ] Add implementation that will allow UserStorage services save the last generated identifier to continue generating after shutdown.
 
 Refactor, run tests, review and commit.
 
@@ -545,7 +549,7 @@ The diagram below shows the expected application architecture:
 
 ![User Storage Detailed Overview](images/UserStorageDetailedOverview.png "User Storage Detailed Overview")
 
-- [ ] New branch "step11".
+- [ ] New branch "step12".
 
 - [ ] Design and implement a new WCF service to allow other applications access service endpoints to work UserStorage services. Each UserStorage service should have its own WCF service for handling incoming requests. Use _apiPort_ service parameter in App.config and "http://localhost:apiPort/userStorage" template for WCF service endpoint. You can use [DiagnosticsService](UserStorage/UserStorage.Diagnostics/DiagnosticsService.cs) as an example, just notice that DiagnosticsService works as a [singleton](https://msdn.microsoft.com/en-us/library/system.servicemodel.instancecontextmode(v=vs.110).aspx) and configured using App.config file.
 
