@@ -1,11 +1,19 @@
 # Feature - Repository Cache
 
-- Apply Decorator design pattern to repository:
+**Feature branch**
+repository-repository-cache
 
-![Repository Decorators](../images/RepositoryDecorators.png "Repository Decorators")
+**Feature description** ([md](https://github.com/epam-lab/user-storage-project/blob/version3/features/repository-cache.md))
+Create a repository cache to improve the performance of getting user record from a a slow repository.
 
-- Implement _UserRepositoryDelayer_ - this class should wait for a timeout before calling the next repository in the decorator chain. The goal of this class is to emulate slow storage.
+**Implementation details**
 
-- Implement _UserRepositoryCache_ using [MemoryCache](https://habrahabr.ru/company/infopulse/blog/258247/) class. This class should store a user object in a cache before it will expire (use expirationInterval).
+- Apply Decorator design pattern.
+
+![Repository Decorators](https://github.com/epam-lab/user-storage-project/raw/master/images/RepositoryDecorators.png "Repository Decorators")
+
+- Implement _UserRepositoryDelayer_ - this decorator should wait for a timeout before calling the next repository in the decorator chain. The goal of this class is to emulate slow storage.
+
+- Implement _UserRepositoryCache_ using [MemoryCache](https://habrahabr.ru/company/infopulse/blog/258247/) class. This class should have a parameter expirationTimeoutInterval that specifies a live time of a user in the cache.
 
 - Create a chain of decorators: UserRepositoryCache->UserRepositoryDelayer->UserRepositoryCache(WithState).
