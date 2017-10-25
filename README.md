@@ -601,11 +601,11 @@ In this section you will stop working with steps. Now it's time for features!
 
 ### Feature
 
-Create a new project in your repository using [UserStorage project](projects/1) as an example. Your new project should have 4 columns - Backlog, In Progess, Development, Code Review and Done.
+Create a new project in your repository using [UserStorage project](../../projects/1) as an example. Your new project should have 4 columns - Backlog, In Progess, Development, Code Review and Done.
 
 Steps for working with features:
 
-1. Create a new feature ticket ([issue ticket](issues)) in your repository using a referenced ticket as an example. Assign the new ticket to you.
+1. Create a new feature ticket ([issue ticket](../../issues)) in your repository using a referenced ticket as an example. Assign the new ticket to you.
 2. Add the ticket to Backlog column.
 3. Create a new feature branch.
 4. Move the ticket to Development column.
@@ -630,6 +630,6 @@ You can read more about DoD in ["А вы завершили свою задач�
 
 ### Product Backlog:
 
-- [ ] Feature [Load Balancer](issue/2).
+- [ ] Feature [Load Balancer](../../issue/2).
 
-- [ ] Feature [Repository Cache](issue/1).
+- [ ] Feature [Repository Cache](../../issue/1).
