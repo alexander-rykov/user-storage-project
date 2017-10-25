@@ -630,6 +630,6 @@ You can read more about DoD in ["А вы завершили свою задач�
 
 ### Product Backlog:
 
-- [ ] Feature [Load Balancer](../../issue/2).
+- [ ] [Load Balancer](../../issue/2).
 
-- [ ] Feature [Repository Cache](../../issue/1).
+- [ ] [Repository Cache](../../issue/1).
