@@ -1,7 +1,7 @@
 # Feature - Repository Cache
 
 **Feature branch**
-repository-repository-cache
+feature-repository-cache
 
 **Feature description** ([md](https://github.com/epam-lab/user-storage-project/blob/version3/features/repository-cache.md))
 Create a repository cache to improve the performance of getting user record from a a slow repository.

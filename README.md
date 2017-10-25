@@ -582,46 +582,36 @@ Run tests, review, commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step13". Merge "step13" into master. Publish.
 
 
-## Step 14 - Checkpoint
+## Checkpoint
 
-- [ ] New branch "step14".
+In this section, please, follow the defined development process that you followed before. The branch name is "checkpoint".
 
-- [ ] Remove any hardcode that was added on the previous steps.
+- Remove any hardcode that was added on the previous steps.
 
-- [ ] Review the project codebase with criteria that are mentioned in presentation ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c). Fix and refactor if necessary.
+- Review the project codebase with criteria that are mentioned in presentation ["Writing High Quality Code in C#"](https://www.slideshare.net/nakov/writing-high-quality-code-in-c).
 
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step14". Merge "step14" into master. Publish.
+- Refactor your application codebase.
+
+- [ ] Checkpoint passed.
 
 
 ## Features
 
-- Create a new branch "feature-<cache>"
+1. Create a new 
+1. Create a feature branch.
+2. Implement a feature using the description in the feature ticket.
+3. Use Definition of Done to make sure that your feature is completed.
+4. Close feature ticket.
 
-- Definition of Done:
-  * No StyleCop issues.
-  * Feature branch should be published to github.
-  * Feature branch should be merged to master branch and
+Use this Definition of Done:
+  - Unit tests: new tests are added to cover new functionality; existed tests are refactored if necessary; all tests are green.
+  - StyleCop code analysis returns no errors and warning.
+  - All changes are committed to the feature branch, and the feature branch is published on github.
+  - Feature branch is merged with master and master branch is published on github.
 
-- [ ] Requirement Cache.
+You can read more about DoD in ["А вы завершили свою задачу?"](http://xpinjection.com/articles/are-you-done-with-your-task/) article.
 
-- [ ] New branch "step15".
+Prioritized Product Backlog:
 
-- [ ] Apply Decorator design pattern to repository:
-
-![Repository Decorators](images/RepositoryDecorators.png "Repository Decorators")
-
-Run tests, review, commit.
-
-- [ ] Implement _UserRepositoryDelayer_ - this class should wait for a timeout before calling the next repository in the decorator chain. The goal of this class is to emulate slow storage.
-
-Run tests, review, commit.
-
-- [ ] Implement _UserRepositoryCache_ using [MemoryCache](https://habrahabr.ru/company/infopulse/blog/258247/) class. This class should store a user object in a cache before it will expire (use expirationInterval).
-
-Run tests, review, commit.
-
-- [ ] Create a chain of decorators: UserRepositoryCache->UserRepositoryDelayer->UserRepositoryCache(WithState). Test the cache behavior.
-
-Run tests, review, commit.
-
-- [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step15". Merge "step15" into master. Publish.
+- [ ] Feature [Repository Cache](issue/1).
+- [ ] Feature [Load Balancer](issue/2).
