@@ -593,7 +593,16 @@ Run tests, review, commit.
 - [ ] Run StyleCop, fix issues, commit. Mark, commit. Publish "step14". Merge "step14" into master. Publish.
 
 
-## Step 15 - Cache
+## Features
+
+- Create a new branch "feature-<cache>"
+
+- Definition of Done:
+  * No StyleCop issues.
+  * Feature branch should be published to github.
+  * Feature branch should be merged to master branch and
+
+- [ ] Requirement Cache.
 
 - [ ] New branch "step15".
 
