@@ -63,6 +63,13 @@ We encourage you to practice TDD and actively use Git during this exersise. Here
 
 - [ ] Install [StyleCop](https://github.com/StyleCop/StyleCop) or [Visual StyleCop](https://www.youtube.com/watch?v=0OMuzHRrScw). Open UserStorage solution and run StyleCop to check your code and to make sure that there are no code issues.
 
+- [ ] [Configure your local git repository](https://git-scm.com/book/ru/v1/Введение-Первоначальная-настройка-Git) using your EPAM user name and email.
+
+```sh
+$ git config --global user.name "Aliaksandr Rykau"
+$ git config --global user.email Aliaksandr_Rykau@epam.com
+```
+
 - [ ] Check unstaged files in your repository.
 
 ```sh
