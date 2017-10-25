@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UserStorage.Diagnostics.Query" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UserStorage.Diagnostics.Query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="EmptyQuery">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="EmptyQuery" nillable="true" type="tns:EmptyQuery" />
+  <xs:complexType name="SelectAllServicesQuery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EmptyQuery">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelectAllServicesQuery" nillable="true" type="tns:SelectAllServicesQuery" />
+  <xs:complexType name="SelectServicesWithSpecifiedNameQuery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EmptyQuery">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelectServicesWithSpecifiedNameQuery" nillable="true" type="tns:SelectServicesWithSpecifiedNameQuery" />
+  <xs:complexType name="SelectServicesWithNameContainsQuery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EmptyQuery">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NameText" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelectServicesWithNameContainsQuery" nillable="true" type="tns:SelectServicesWithNameContainsQuery" />
+  <xs:complexType name="SelectServicesWithSpecifiedTypeQuery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EmptyQuery">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelectServicesWithSpecifiedTypeQuery" nillable="true" type="tns:SelectServicesWithSpecifiedTypeQuery" />
+</xs:schema>
