@@ -639,7 +639,7 @@ Steps for working with features:
 
 ### Definition of Done
 
-  - All expected functional, non-functional and architecture requirements are met.
+  - All expected functional, non-functional and architecture requirements are implemented.
   - Unit tests: new tests are added to cover new functionality; existed tests are refactored if necessary; all tests are green.
   - StyleCop code analysis returns no errors and warning.
   - All changes are committed to the feature branch, and the feature branch is published on github.
