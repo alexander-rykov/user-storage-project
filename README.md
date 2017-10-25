@@ -597,21 +597,39 @@ In this section, please, follow the defined development process that you followe
 
 ## Features
 
-1. Create a new 
-1. Create a feature branch.
-2. Implement a feature using the description in the feature ticket.
-3. Use Definition of Done to make sure that your feature is completed.
-4. Close feature ticket.
+In this section you will stop working with steps. Now it's time for features!
 
-Use this Definition of Done:
+### Feature
+
+Create a new project in your repository using [UserStorage project](projects/1) as an example. Your new project should have 4 columns - Backlog, In Progess, Development, Code Review and Done.
+
+Steps for working with features:
+
+1. Create a new feature ticket ([issue ticket](issues)) in your repository using a referenced ticket as an example. Assign the new ticket to you.
+2. Add the ticket to Backlog column.
+3. Create a new feature branch.
+4. Move the ticket to Development column.
+5. Add feature implementation using the description in the feature ticket.
+6. Move the ticket to Code Review column.
+7. Ask your peer to perform code review, and leave a comment with feedback.
+8. Make sure that your feature met all Definition of Done criteria.
+9. Move the ticket to Done column.
+10. Close the ticket with comment "DoD met.".
+
+
+### Definition of Done
+
+  - All expected functional, non-functional and architecture requirements are met.
   - Unit tests: new tests are added to cover new functionality; existed tests are refactored if necessary; all tests are green.
   - StyleCop code analysis returns no errors and warning.
   - All changes are committed to the feature branch, and the feature branch is published on github.
+  - Code Review is performed by your peer.
   - Feature branch is merged with master and master branch is published on github.
 
 You can read more about DoD in ["А вы завершили свою задачу?"](http://xpinjection.com/articles/are-you-done-with-your-task/) article.
 
-Prioritized Product Backlog:
+### Product Backlog:
+
+- [ ] Feature [Load Balancer](issue/2).
 
 - [ ] Feature [Repository Cache](issue/1).
-- [ ] Feature [Load Balancer](issue/2).
