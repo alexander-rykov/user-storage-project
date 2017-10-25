@@ -132,7 +132,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-- [ ] Publish changes to github.
+- Publish changes to github.
 
 ```sh
 $ git push
