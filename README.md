@@ -197,10 +197,16 @@ $ git commit -m "Fix StyleCop issues."
 
 - [ ] Mark all completed items in README.md. Review and commit.
 
+- Review the branch log using [git log](https://git-scm.com/book/ru/v1/Основы-Git-Просмотр-истории-коммитов).
+
+```sh
+$ git log
+```
+
 - Publish "step1" branch to [remote branch](https://git-scm.com/book/ru/v2/Ветвление-в-Git-Удалённые-ветки) on github.
 
 ```sh
-$ git push -u origin step2
+$ git push -u origin step1
 ```
 
 - Switch to master branch. Merge "step1" branch into master. Publish changes to master branch on github.
@@ -218,6 +224,7 @@ $ git log --oneline
 $ git status
 On branch master
 nothing to commit, working directory clean
+$ git push
 ```
 
 
@@ -268,6 +275,12 @@ Run tests, review and commit.
 - [ ] Run StyleCop. Fix issues. Commit.
 
 - [ ] Mark. Commit.
+
+- Review the branch log using [pretty output](https://coderwall.com/p/euwpig/a-better-git-log):
+
+```sh
+git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+```
 
 - Publish "step2" branch to github.
 
