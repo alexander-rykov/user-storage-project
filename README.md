@@ -281,9 +281,8 @@ Review and commit.
 Run tests, review and commit.
 
 - [ ] Configure logging using App.config.
-  * Refactor your _UserStorageService_ class to use [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) instead of _IsLoggingEnabled_ property.
+  * Refactor your _IsLoggingEnabled_ property to use [boolean switch](https://msdn.microsoft.com/en-us/library/system.diagnostics.booleanswitch%28v=vs.110%29.aspx) in the property getter.
   * Use _enableLogging_ boolean switch that is already added to your App.config.
-  * Remove unnecessary _IsLoggingEnabled_ property.
   * Run application with _enableLogging_ switch enabled and disabled to make sure that logging works properly.
 
 Run tests, review and commit.
