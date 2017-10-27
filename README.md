@@ -132,6 +132,20 @@ On branch master
 nothing to commit, working directory clean
 ```
 
+- Edit README.md and make the text below bold.
+
+I promise I will read this document carefully.
+
+ Use [git commit --amend](https://git-scm.com/book/ru/v1/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git-%D0%9E%D1%82%D0%BC%D0%B5%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9) to add those changes to the latest commit. Don't change the commit message.
+
+```sh
+$ git log --oneline
+....... (HEAD -> master3) Mark completed items.
+$ git commit --amend -m "Mark completed items."
+$ got log --oneline
+....... (HEAD -> master3) Mark completed items.
+```
+
 - Publish changes to github.
 
 ```sh
