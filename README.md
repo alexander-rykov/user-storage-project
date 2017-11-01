@@ -436,7 +436,7 @@ Add new tests, run all tests, review and commit.
 
 Refactor, run tests, review and commit.
 
-- [ ] Add implementation that will allow UserStorage services save the last generated identifier to continue generating after shutdown.
+- [ ] Replace the type for Id field in User class with int. Add implementation that will allow UserStorage services save the last generated identifier to continue generating identifier sequence after shutdown.
 
 Refactor, run tests, review and commit.
 
