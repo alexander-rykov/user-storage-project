@@ -401,6 +401,8 @@ Refactor tests, run tests, review and commit.
 
 ![Master-Slave Repository](images/MasterSlaveRepository.png "Master-Slave Repository")
 
+There's an inconsistency in the diagram above - the _IUserRepository_ interface has three methods Get, Set, and Query. Add also Delete method in this interface.
+
 Run tests, review and commit.
 
 - [ ] Refactor your code.
