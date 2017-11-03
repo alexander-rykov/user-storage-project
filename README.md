@@ -681,11 +681,11 @@ Please, [create your own](https://github.com/new) repository.
 
 - Do I need to fix all issues that StyleCop showes me in the output window? But what if I don't like this style...
 
+Yes, you have to fix all style issues before merging a step branch. Follow the defined rules, please.
+
 - I have issues with git...
 
 Please, read all steps CAREFULLY. It seems that you miss something.
-
-Yes, you have to fix all style issues before merging a step branch. Follow the defined rules, please.
 
 - But R# says that...
 
