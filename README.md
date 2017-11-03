@@ -59,7 +59,7 @@ We encourage you to practice TDD and actively use Git during this exersise. Here
 
 ## Prepare
 
-- [ ] Create a new repository on github. Move all content of the master branch in this repository to your new repository.
+- [ ] [Create a new repository](https://github.com/new) on github. Move all content of the master branch in this repository to your new repository.
 
 - [ ] Install [StyleCop](https://github.com/StyleCop/StyleCop) or [Visual StyleCop](https://www.youtube.com/watch?v=0OMuzHRrScw). Open UserStorage solution and run StyleCop to check your code and to make sure that there are no code issues.
 
@@ -401,7 +401,7 @@ Refactor tests, run tests, review and commit.
 
 ![Master-Slave Repository](images/MasterSlaveRepository.png "Master-Slave Repository")
 
-There's an inconsistency in the diagram above - the _IUserRepository_ interface has three methods Get, Set, and Query. Add also Delete method in this interface.
+The purpose of Set, Delete and Query methods in the _IUserRepository_ interface is the same as for Add, Remove and Search methods in _IUserStorageService_ interface. Anyway, the method signatures may be different.
 
 Run tests, review and commit.
 
@@ -665,8 +665,44 @@ Steps for working with features:
 
 You can read more about DoD in ["А вы завершили свою задачу?"](http://xpinjection.com/articles/are-you-done-with-your-task/) article.
 
+
 ### Product Backlog:
 
 - [Load Balancer](../../issues/2)
 
 - [Repository Cache](../../issues/1)
+
+
+## FAQ
+
+- Can I fork your repository?
+
+Please, [create your own](https://github.com/new) repository.
+
+- Do I need to fix all issues that StyleCop showes me in the output window? But what if I don't like this style...
+
+- I have issues with git...
+
+Please, read all steps CAREFULLY. It seems that you miss something.
+
+Yes, you have to fix all style issues before merging a step branch. Follow the defined rules, please.
+
+- But R# says that...
+
+You can configure R# rules in accordance with StyleCop rules.
+
+- Do I need to have no compiler errors before committing my changes?
+
+Yes, no commits with broken code are allowed. Please, build your solution before committing your code.
+
+- Is it possible to use other unit testing / mocking framework?
+
+Yes. The main thing here is to keep your tests up to date.
+
+- I've merged my step branch to master, but I found a bug in my code and I want to fix it.
+
+It's a good idea to create a new branch (for example "step3-fix1"), fix your bug, run StyleCop and unit tests, and then merge the branch with master.
+
+- I have an issue ""Протоколу HTTP не удалось зарегистрировать URL-адрес http://+:8080/diagnostics/. Текущий процесс не имеет прав доступа к этому пространству имен (подробнее см. на веб-странице http://go.microsoft.com/fwlink/?LinkId=70353)."
+
+[netsh http add urlacl url=http://+:8080/diagnostics user=DOMAIN\user](https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/configuring-http-and-https)
